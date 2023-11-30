@@ -6,7 +6,9 @@
  /* Huibahitte color: #39312a */
 
 html {
-  overflow-x: hidden; }
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -40,7 +42,8 @@ a {
   color: #39312a; }
 
 .padding-top {
-  padding-top: 65px; }
+  padding-top: 65px; 
+}
 
 a:focus,
 button:focus {
@@ -69,7 +72,8 @@ a:hover {
   @media (min-width: 992px) {
     .boxed-page .section-padding {
       padding-top: 130px;
-      padding-bottom: 130px; } }
+      padding-bottom: 130px; } 
+    }
 
 @media (min-width: 1200px) {
   .boxed-page {
@@ -200,6 +204,23 @@ a:hover {
 
 .heading-section {
   margin-bottom: 30px; }
+
+.middle {
+  text-align: center;
+}
+.end {
+  text-align: end;
+}
+
+.icon-size-2{
+  font-size: 24px;
+}
+
+.fa-arrow-left{
+  color: #000;
+}
+
+
 
 /*===============================
 =            OVERLAY            =
