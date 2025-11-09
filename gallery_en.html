@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gallery - Huiba Hitte</title>
+    <meta name="description" content="Gallery of our homemade products and dishes. Huiba Hitte, Ski hut at Kronplatz.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:image" content="https://huibahitte.com/img/hitte_sunrise.jpg">
+    <meta property="og:title" content="Gallery - Huiba Hitte">
+    <meta property="og:description" content="Our homemade products and dishes with regional ingredients." />
+    <meta property="og:url" content="https://huibahitte.com/gallery_en.html">
+
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3e352e">
+    <meta name="msapplication-TileColor" content="#3e352e">
+    <meta name="theme-color" content="#3e352e">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Gallery specific styles -->
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item img {
+                height: 180px;
+            }
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px 10px 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .gallery-category {
+            margin-bottom: 50px;
+        }
+        
+        .gallery-category h3 {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #3e352e;
+            border-bottom: 2px solid #d4a574;
+            padding-bottom: 10px;
+        }
+    </style>
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
+	
+    <div id="canvas-overlay"></div>
+	
+    <div class="boxed-page">
+		
+    <nav id="navbar-header" class="navbar navbar-expand">
+        <div class="container">        
+            <div class="justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-between">
+                    <div class="d-flex flex-lg-row flex-sm-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="galerie.html">DE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galleria_it.html">IT</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link">EN</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>		
+
+    <!-- Header -->
+    <div class="hero bg-white">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center" style="min-height: 200px;">
+                <div class="col-lg-8 text-center">
+                    <a class="navbar-brand d-flex align-items-center justify-content-center mb-4" href="index_en.html">
+                        <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte Logo" style="max-height: 120px;">
+                    </a>
+                    <h1 class="display-4">Our Product Gallery</h1>
+                    <p class="lead">Homemade delicacies and regional specialties</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="bg-white section-padding">
+        <div class="container">
+            
+            <!-- Gerichte / Dishes Category -->
+            <div class="gallery-category">
+                <h3>Our Dishes</h3>
+                <div class="gallery-grid">
+                    <a href="img/speckbrettl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/speckbrettl.jpg" alt="Speck platter">
+                        <div class="gallery-item-caption">Speck Platter</div>
+                    </a>
+                    <a href="img/wedges.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/wedges.jpg" alt="Wedges">
+                        <div class="gallery-item-caption">Potato Wedges</div>
+                    </a>
+                    <a href="img/schmorrn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/schmorrn.jpg" alt="Kaiserschmarrn">
+                        <div class="gallery-item-caption">Kaiserschmarrn</div>
+                    </a>
+                    <a href="img/kneidl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kneidl.jpg" alt="Dumplings">
+                        <div class="gallery-item-caption">Dumplings</div>
+                    </a>
+                    <a href="img/teigtaschn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/teigtaschn.jpg" alt="Pasta pockets">
+                        <div class="gallery-item-caption">Pasta Pockets</div>
+                    </a>
+                    <a href="img/nudlpfandl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/nudlpfandl.jpg" alt="Pasta pan">
+                        <div class="gallery-item-caption">Pasta Pan</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hofeigene Produkte / Farm Products Category -->
+            <div class="gallery-category">
+                <h3>Farm Products</h3>
+                <div class="gallery-grid">
+                    <a href="img/steak.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/steak.jpg" alt="Meat from the farm">
+                        <div class="gallery-item-caption">Beef from the Farm</div>
+                    </a>
+                    <a href="img/kartoffel.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kartoffel.jpg" alt="Potatoes">
+                        <div class="gallery-item-caption">Potato Delivery</div>
+                    </a>
+                    <a href="img/kartoffel_ernte_2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kartoffel_ernte_2.jpg" alt="Potato harvest">
+                        <div class="gallery-item-caption">Potato Harvest</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Getränke & Desserts / Drinks & Desserts Category -->
+            <div class="gallery-category">
+                <h3>Drinks & Desserts</h3>
+                <div class="gallery-grid">
+                    <a href="img/drinks.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/drinks.jpg" alt="Drinks">
+                        <div class="gallery-item-caption">Drinks</div>
+                    </a>
+                    <a href="img/strudl_snow.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/strudl_snow.jpg" alt="Strudel">
+                        <div class="gallery-item-caption">Apple Strudel</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Die Hütte / The Hut Category -->
+            <div class="gallery-category">
+                <h3>The Hut</h3>
+                <div class="gallery-grid">
+                    <a href="img/hitte_sunrise.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_sunrise.jpg" alt="Sunrise">
+                        <div class="gallery-item-caption">Hut at Sunrise</div>
+                    </a>
+                    <a href="img/hitte.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte.jpg" alt="Huiba Hitte">
+                        <div class="gallery-item-caption">Huiba Hitte</div>
+                    </a>
+                    <a href="img/hitte_ausn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_ausn.jpg" alt="Exterior view">
+                        <div class="gallery-item-caption">Exterior View</div>
+                    </a>
+                    <a href="img/terrasse_2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/terrasse_2.jpg" alt="Terrace">
+                        <div class="gallery-item-caption">Terrace</div>
+                    </a>
+                    <a href="img/terrasse.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/terrasse.jpg" alt="Terrace view">
+                        <div class="gallery-item-caption">Terrace View</div>
+                    </a>
+                    <a href="img/hitte_innen.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_innen.jpg" alt="Interior">
+                        <div class="gallery-item-caption">Interior</div>
+                    </a>
+                    <a href="img/stube.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/stube.jpg" alt="Dining room">
+                        <div class="gallery-item-caption">Dining Room</div>
+                    </a>
+                    <a href="img/hitte_voll.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_voll.jpg" alt="Full hut">
+                        <div class="gallery-item-caption">Cozy Atmosphere</div>
+                    </a>
+                    <a href="img/hitte-sommer.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte-sommer.jpg" alt="Summer">
+                        <div class="gallery-item-caption">Summer on the Alp</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back to home button -->
+            <div class="text-center mt-5">
+                <a href="index_en.html" class="btn btn-primary btn-lg">Back to Home</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mastfoot pb-5 bg-white section-padding pb-0">
+        <div class="inner container">
+             <div class="row">
+             	<!-- desktop -->
+                <div class="col-lg-4 col-sm-12 only-desktop">
+             		<div class="footer-widget pr-lg-5 pr-0">
+    	         		<p>Prackenweg 32<br>I-39030 Olang<br>Southtyrol Italy</p>
+    								
+    					<p>Phone: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
+    					<p>Mobile: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
+    					
+    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+    					
+    					<p>VAT: IT 01480450210</p>
+             		</div>
+             	</div>
+
+                <!-- mobile -->
+                <div class="middle col-sm-12 only-mobile">
+                    <div class="footer-widget middle">
+                        <p>Prackenweg 32<br>I-39030 Olang<br>Southtyrol Italy</p>
+                                   
+                       <p>Phone: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
+                       <p>Mobile: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
+                       
+                       <p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+                       
+                       <p>VAT: IT 01480450210</p>
+                    </div>
+                </div>
+
+                <!-- desktop -->
+             	<div class="col-lg-5 only-desktop">
+             		<div class="footer-widget px-lg-5 px-0 col-sm-12">
+             			<h4>Opening hours</h4>
+                        <p><strong>Season from 01.12.2024 to 30.03.2025</strong></p>
+    	         		<ul class="list-unstyled open-hours">
+    		                <li class="d-flex justify-content-between"><span>Monday</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Tuesday</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Wednesday</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Thursday</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Friday</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Saturday</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Sunday</span><span> 9:00 - 16:00</span></li>
+    		              </ul>
+             		</div>
+             	</div>
+
+                <!-- mobile -->
+             	<div class="col-sm-12 middle only-mobile padding-top">
+                    <div class="footer-widget middle">
+                        <h4>Opening hours</h4>
+                       <p><strong>Season from 30.11.2024 to 30.03.2025</strong></p>
+                       <div class="container mx-auto w-75 middle">
+                        <ul class="list-unstyled open-hours">
+                           <li class="d-flex justify-content-between"><span>Monday</span><span>9:00 - 16:00</span></li>
+                           <li class="d-flex justify-content-between"><span>Tuesday</span><span>9:00 - 16:00</span></li>
+                           <li class="d-flex justify-content-between"><span>Wednesday</span><span>9:00 - 16:00</span></li>
+                           <li class="d-flex justify-content-between"><span>Thursday</span><span>9:00 - 16:00</span></li>
+                           <li class="d-flex justify-content-between"><span>Friday</span><span>9:00 - 16:00</span></li>
+                           <li class="d-flex justify-content-between"><span>Saturday</span><span>9:00 - 16:00</span></li>
+                           <li class="d-flex justify-content-between"><span>Sunday</span><span> 9:00 - 16:00</span></li>
+                         </ul>
+                        </div>     
+                    </div>
+                </div>
+
+
+                <!-- desktop align end -->
+             	<div class="col-lg-3 end only-desktop">
+             		<div class="footer-widget end">
+    					<nav class="nav nav-mastfoot end justify-content-end">
+    		                <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
+    		                	<i class="fab icon-size-2 fa-facebook-f"></i>
+    		                </a>
+    		                <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
+    		                	<i class="fab icon-size-2 fa-instagram"></i>
+    		                </a>
+    		            </nav>
+                        <div class="w-100 ">
+                            <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
+                        </div>
+             		</div>
+             	</div>
+                <!-- mobile align center -->
+                <div class="col-lg-3 middle only-mobile padding-top">
+                    <div class="footer-widget middle">
+                       <nav class="nav nav-mastfoot end justify-content-center">
+                           <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
+                               <i class="fab icon-size-2 fa-facebook-f"></i>
+                           </a>
+                           <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
+                               <i class="fab icon-size-2 fa-instagram"></i>
+                           </a>
+                       </nav>
+                       <div class="w-100 ">
+                           <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
+                       </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    	<section>
+            
+            <div class="col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 48px;">
+                <a href="impressum_en.html">Imprint</a>
+            </div>
+            
+    
+    		<div class="col-md-12 d-flex align-items-center" style="padding-top:48px">
+             	<p class="mx-auto text-center mb-0">Copyright 2024. All Right Reserved. Design by Huiba Family</p>
+            </div>
+        
+    	</section>
+    	
+    </footer>	
+    </div>
+
+    </div>
+    	<!-- External JS -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    	<script src="vendor/bootstrap/popper.min.js"></script>
+    	<script src="vendor/bootstrap/bootstrap.min.js"></script>
+    	<script src="vendor/select2/select2.min.js "></script>
+    	<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+    	<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js"></script>
+    	<script src="vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    	<!-- Main JS -->
+    	<script src="js/app.min.js "></script>
+    </body>
+    </html>

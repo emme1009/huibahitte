@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Galleria - Huiba Hitte</title>
+    <meta name="description" content="Galleria dei nostri prodotti fatti in casa e piatti. Huiba Hitte, Rifugio al Plan de Corones.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:image" content="https://huibahitte.com/img/hitte_sunrise.jpg">
+    <meta property="og:title" content="Galleria - Huiba Hitte">
+    <meta property="og:description" content="I nostri prodotti fatti in casa e piatti con ingredienti regionali." />
+    <meta property="og:url" content="https://huibahitte.com/galleria_it.html">
+
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3e352e">
+    <meta name="msapplication-TileColor" content="#3e352e">
+    <meta name="theme-color" content="#3e352e">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Gallery specific styles -->
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item img {
+                height: 180px;
+            }
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px 10px 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .gallery-category {
+            margin-bottom: 50px;
+        }
+        
+        .gallery-category h3 {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #3e352e;
+            border-bottom: 2px solid #d4a574;
+            padding-bottom: 10px;
+        }
+    </style>
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
+	
+    <div id="canvas-overlay"></div>
+	
+    <div class="boxed-page">
+		
+    <nav id="navbar-header" class="navbar navbar-expand">
+        <div class="container">        
+            <div class="justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-between">
+                    <div class="d-flex flex-lg-row flex-sm-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="galerie.html">DE</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link">IT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery_en.html">EN</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>		
+
+    <!-- Header -->
+    <div class="hero bg-white">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center" style="min-height: 200px;">
+                <div class="col-lg-8 text-center">
+                    <a class="navbar-brand d-flex align-items-center justify-content-center mb-4" href="index_it.html">
+                        <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte Logo" style="max-height: 120px;">
+                    </a>
+                    <h1 class="display-4">La Nostra Galleria</h1>
+                    <p class="lead">Delizie fatte in casa e specialità regionali</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="bg-white section-padding">
+        <div class="container">
+            
+            <!-- Gerichte / Dishes Category -->
+            <div class="gallery-category">
+                <h3>I Nostri Piatti</h3>
+                <div class="gallery-grid">
+                    <a href="img/speckbrettl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/speckbrettl.jpg" alt="Tagliere di speck">
+                        <div class="gallery-item-caption">Tagliere di Speck</div>
+                    </a>
+                    <a href="img/wedges.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/wedges.jpg" alt="Wedges">
+                        <div class="gallery-item-caption">Spicchi di Patate</div>
+                    </a>
+                    <a href="img/schmorrn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/schmorrn.jpg" alt="Kaiserschmarrn">
+                        <div class="gallery-item-caption">Kaiserschmarrn</div>
+                    </a>
+                    <a href="img/kneidl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kneidl.jpg" alt="Canederli">
+                        <div class="gallery-item-caption">Canederli</div>
+                    </a>
+                    <a href="img/teigtaschn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/teigtaschn.jpg" alt="Ravioli">
+                        <div class="gallery-item-caption">Ravioli</div>
+                    </a>
+                    <a href="img/nudlpfandl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/nudlpfandl.jpg" alt="Padella di pasta">
+                        <div class="gallery-item-caption">Padella di Pasta</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hofeigene Produkte / Farm Products Category -->
+            <div class="gallery-category">
+                <h3>Prodotti della Fattoria</h3>
+                <div class="gallery-grid">
+                    <a href="img/steak.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/steak.jpg" alt="Carne della fattoria">
+                        <div class="gallery-item-caption">Carne Bovina della Fattoria</div>
+                    </a>
+                    <a href="img/kartoffel.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kartoffel.jpg" alt="Patate">
+                        <div class="gallery-item-caption">Consegna di Patate</div>
+                    </a>
+                    <a href="img/kartoffel_ernte_2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kartoffel_ernte_2.jpg" alt="Raccolta patate">
+                        <div class="gallery-item-caption">Raccolta di Patate</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Getränke & Desserts / Drinks & Desserts Category -->
+            <div class="gallery-category">
+                <h3>Bevande e Dessert</h3>
+                <div class="gallery-grid">
+                    <a href="img/drinks.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/drinks.jpg" alt="Bevande">
+                        <div class="gallery-item-caption">Bevande</div>
+                    </a>
+                    <a href="img/strudl_snow.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/strudl_snow.jpg" alt="Strudel">
+                        <div class="gallery-item-caption">Strudel di Mele</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Die Hütte / The Hut Category -->
+            <div class="gallery-category">
+                <h3>Il Rifugio</h3>
+                <div class="gallery-grid">
+                    <a href="img/hitte_sunrise.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_sunrise.jpg" alt="Alba">
+                        <div class="gallery-item-caption">Rifugio all'Alba</div>
+                    </a>
+                    <a href="img/hitte.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte.jpg" alt="Huiba Hitte">
+                        <div class="gallery-item-caption">Huiba Hitte</div>
+                    </a>
+                    <a href="img/hitte_ausn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_ausn.jpg" alt="Vista esterna">
+                        <div class="gallery-item-caption">Vista Esterna</div>
+                    </a>
+                    <a href="img/terrasse_2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/terrasse_2.jpg" alt="Terrazza">
+                        <div class="gallery-item-caption">Terrazza</div>
+                    </a>
+                    <a href="img/terrasse.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/terrasse.jpg" alt="Vista terrazza">
+                        <div class="gallery-item-caption">Vista della Terrazza</div>
+                    </a>
+                    <a href="img/hitte_innen.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_innen.jpg" alt="Interno">
+                        <div class="gallery-item-caption">Interno</div>
+                    </a>
+                    <a href="img/stube.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/stube.jpg" alt="Stube">
+                        <div class="gallery-item-caption">Stube</div>
+                    </a>
+                    <a href="img/hitte_voll.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_voll.jpg" alt="Rifugio pieno">
+                        <div class="gallery-item-caption">Ambiente Accogliente</div>
+                    </a>
+                    <a href="img/hitte-sommer.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte-sommer.jpg" alt="Estate">
+                        <div class="gallery-item-caption">Estate sull'Alpeggio</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back to home button -->
+            <div class="text-center mt-5">
+                <a href="index_it.html" class="btn btn-primary btn-lg">Torna alla Home</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mastfoot pb-5 bg-white section-padding pb-0">
+        <div class="inner container">
+             <div class="row">
+
+              	  <!-- deskop -->
+                <div class="col-lg-4 only-desktop">
+             		<div class="footer-widget pr-lg-5 pr-0">
+    	         		<p>Via Pracken 32<br>I-39030 Valdaora<br>Alto Adige Italia</p>
+    								
+    					<p>Telefono: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
+    					<p>Privato: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
+    					
+    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+    					
+    					<p>IVA: IT 01480450210</p>
+             		</div>
+             	</div>
+
+                <!-- mobile -->
+                <div class="middle col-sm-12 only-mobile">
+                    <div class="footer-widget middle">
+                        <p>Via Pracken 32<br>I-39030 Valdaora<br>Alto Adige Italia</p>
+    								
+    					<p>Telefono: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
+    					<p>Privato: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
+    					
+    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+    					
+    					<p>IVA: IT 01480450210</p>
+                    </div>
+                </div>
+
+
+
+                <!-- desktop -->
+             	<div class="col-lg-5 only-desktop">
+             		<div class="footer-widget px-lg-5 px-0">
+             			<h4>Orari di apertura</h4>
+                        <p><strong>Stagione dal 01.12.2024 al 30.03.2025</strong></p>
+    	         		<ul class="list-unstyled open-hours">
+    		                <li class="d-flex justify-content-between"><span>Lunedì</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Martedì</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Mercoledì</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Giovedì</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Venerdì</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Sabato</span><span>9:00 - 16:00</span></li>
+    		                <li class="d-flex justify-content-between"><span>Domenica</span><span> 9:00 - 16:00</span></li>
+    		              </ul>
+             		</div>
+             	</div>
+
+                <!-- mobile -->
+                <div class="col-sm-12 middle only-mobile padding-top">
+                    <div class="footer-widget middle">
+                        <h4>Orari di apertura</h4>
+                    <p><strong>Stagione dal 30.11.2024 al 30.03.2025</strong></p>
+                    <div class="container mx-auto w-75 middle">
+                        <ul class="list-unstyled open-hours">
+                            <li class="d-flex justify-content-between"><span>Lunedì</span><span>9:00 - 16:00</span></li>
+                            <li class="d-flex justify-content-between"><span>Martedì</span><span>9:00 - 16:00</span></li>
+                            <li class="d-flex justify-content-between"><span>Mercoledì</span><span>9:00 - 16:00</span></li>
+                            <li class="d-flex justify-content-between"><span>Giovedì</span><span>9:00 - 16:00</span></li>
+                            <li class="d-flex justify-content-between"><span>Venerdì</span><span>9:00 - 16:00</span></li>
+                            <li class="d-flex justify-content-between"><span>Sabato</span><span>9:00 - 16:00</span></li>
+                            <li class="d-flex justify-content-between"><span>Domenica</span><span> 9:00 - 16:00</span></li>
+                        </ul>
+                        </div>     
+                    </div>
+                </div>
+
+             	 <!-- desktop align end -->
+                  <div class="col-lg-3 end only-desktop">
+                    <div class="footer-widget end">
+                       <nav class="nav nav-mastfoot end justify-content-end">
+                           <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
+                               <i class="fab icon-size-2 fa-facebook-f"></i>
+                           </a>
+                           <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
+                               <i class="fab icon-size-2 fa-instagram"></i>
+                           </a>
+                       </nav>
+                       <div class="w-100 ">
+                           <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
+                       </div>
+                    </div>
+                </div>
+
+               <!-- mobile align center -->
+               <div class="col-lg-3 middle only-mobile padding-top">
+                   <div class="footer-widget middle">
+                      <nav class="nav nav-mastfoot end justify-content-center">
+                          <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
+                              <i class="fab icon-size-2 fa-facebook-f"></i>
+                          </a>
+                          <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
+                              <i class="fab icon-size-2 fa-instagram"></i>
+                          </a>
+                      </nav>
+                      <div class="w-100 ">
+                          <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
+                      </div>
+                   </div>
+               </div>
+             	
+                
+            </div>
+        </div>
+    	<section>
+            
+            <div class="col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 48px;">
+                <a href="impressum_it.html">Impronta</a>
+            </div>
+            
+    
+    		<div class="col-md-12 d-flex align-items-center" style="padding-top:48px">
+             	<p class="mx-auto text-center mb-0">Copyright 2024. All Right Reserved. Design by Huiba Family</p>
+            </div>
+        
+    	</section>
+    	
+    </footer>	
+    </div>
+
+    </div>
+    	<!-- External JS -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    	<script src="vendor/bootstrap/popper.min.js"></script>
+    	<script src="vendor/bootstrap/bootstrap.min.js"></script>
+    	<script src="vendor/select2/select2.min.js "></script>
+    	<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+    	<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js"></script>
+    	<script src="vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    	<!-- Main JS -->
+    	<script src="js/app.min.js "></script>
+    </body>
+    </html>
