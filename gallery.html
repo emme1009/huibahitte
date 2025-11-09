@@ -126,6 +126,18 @@
             margin-bottom: 0;
         }
 
+        /* Reduce section padding for gallery */
+        .gallery-section {
+            padding-top: 30px !important;
+            padding-bottom: 65px !important;
+        }
+
+        @media (min-width: 992px) {
+            .gallery-section {
+                padding-top: 40px !important;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-compact {
                 padding: 20px 0 15px 0;
@@ -187,7 +199,7 @@
     </div>
 
     <!-- Gallery Section -->
-    <section class="bg-white section-padding">
+    <section class="bg-white section-padding gallery-section">
         <div class="container">
             
             <!-- Gerichte / Dishes Category -->
