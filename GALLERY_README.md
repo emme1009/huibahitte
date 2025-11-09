@@ -1,12 +1,13 @@
 # Photo Gallery Documentation
 
 ## Overview
-The photo gallery feature provides a beautiful, responsive way to showcase all homemade products and images from Huiba Hitte. The gallery is available in three languages (German, Italian, and English) and is optimized for both desktop and mobile viewing.
+The photo gallery feature provides a beautiful, responsive way to showcase all homemade products and images from Huiba Hitte. The gallery is a **single unified page** with built-in language switching for German, Italian, and English. It automatically detects the user's browser language and is optimized for both desktop and mobile viewing.
 
 ## Files
-- `galerie.html` - German version
-- `galleria_it.html` - Italian version  
-- `gallery_en.html` - English version
+- `gallery.html` - **Unified gallery page** with automatic language detection and switching
+- `galerie.html` - *(Deprecated - kept for backward compatibility)*
+- `galleria_it.html` - *(Deprecated - kept for backward compatibility)*  
+- `gallery_en.html` - *(Deprecated - kept for backward compatibility)*
 
 ## Features
 
@@ -33,20 +34,29 @@ The photo gallery feature provides a beautiful, responsive way to showcase all h
 - Click any image to view in full-screen lightbox
 - Easy navigation and close functionality
 
+### Language Switching
+- **Automatic detection**: Detects browser language on first visit
+- **Manual switching**: Click DE/IT/EN buttons in the top navigation
+- **Persistent selection**: Language preference is saved in localStorage
+- **Dynamic content**: All text (titles, captions, footer) updates instantly
+- **Smart home links**: Back button routes to correct language version of main site
+
 ### Navigation
 - Gallery links are available in the footer of all main index pages
-- Links are properly localized for each language version
-- Easy back-to-home buttons on each gallery page
+- All index pages link to the unified `gallery.html`
+- Back-to-home buttons route to appropriate language version
 
 ## QR Code Access
 
-The gallery pages are perfect for QR code access. Create QR codes pointing to:
+The gallery is perfect for QR code access with a **single URL** solution:
 
-- **German**: `https://huibahitte.com/galerie.html`
-- **Italian**: `https://huibahitte.com/galleria_it.html`
-- **English**: `https://huibahitte.com/gallery_en.html`
+- **Single QR Code URL**: `https://huibahitte.com/gallery.html`
 
-All pages are fully optimized for mobile viewing, providing an excellent user experience when accessed via QR code on smartphones.
+The page automatically detects the user's browser language and displays content in German, Italian, or English accordingly. Users can also manually switch languages using the language selector at the top of the page.
+
+This single-URL approach solves the QR code limitation where only one link can be encoded. All visitors will access the same page, but see content in their preferred language.
+
+The page is fully optimized for mobile viewing, providing an excellent user experience when accessed via QR code on smartphones.
 
 ## Styling
 

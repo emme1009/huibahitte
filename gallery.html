@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gallery - Huiba Hitte</title>
+    <meta name="description" content="Photo gallery of our homemade products and dishes. Huiba Hitte.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:image" content="https://huibahitte.com/img/hitte_sunrise.jpg">
+    <meta property="og:title" content="Gallery - Huiba Hitte">
+    <meta property="og:description" content="Our homemade products and dishes with regional ingredients." />
+    <meta property="og:url" content="https://huibahitte.com/gallery.html">
+
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3e352e">
+    <meta name="msapplication-TileColor" content="#3e352e">
+    <meta name="theme-color" content="#3e352e">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Gallery specific styles -->
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item img {
+                height: 180px;
+            }
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px 10px 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .gallery-category {
+            margin-bottom: 50px;
+        }
+        
+        .gallery-category h3 {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #3e352e;
+            border-bottom: 2px solid #d4a574;
+            padding-bottom: 10px;
+        }
+
+        .hero-compact {
+            padding: 30px 0 20px 0;
+        }
+
+        .hero-compact .navbar-brand img {
+            max-height: 80px;
+        }
+
+        .hero-compact h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-compact .lead {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-compact {
+                padding: 20px 0 15px 0;
+            }
+            
+            .hero-compact .navbar-brand img {
+                max-height: 60px;
+            }
+            
+            .hero-compact h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
+	
+    <div id="canvas-overlay"></div>
+	
+    <div class="boxed-page">
+		
+    <nav id="navbar-header" class="navbar navbar-expand">
+        <div class="container">        
+            <div class="justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-between">
+                    <div class="d-flex flex-lg-row flex-sm-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="setLanguage('de'); return false;">DE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="setLanguage('it'); return false;">IT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="setLanguage('en'); return false;">EN</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>		
+
+    <!-- Header -->
+    <div class="hero bg-white hero-compact">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <a class="navbar-brand d-flex align-items-center justify-content-center mb-3" href="index.html" id="homeLink">
+                        <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte Logo">
+                    </a>
+                    <h1 class="display-4" id="galleryTitle">Unsere Produktgalerie</h1>
+                    <p class="lead" id="gallerySubtitle">Hausgemachte Köstlichkeiten und regionale Spezialitäten</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="bg-white section-padding">
+        <div class="container">
+            
+            <!-- Gerichte / Dishes Category -->
+            <div class="gallery-category">
+                <h3 id="categoryDishes">Unsere Gerichte</h3>
+                <div class="gallery-grid">
+                    <a href="img/speckbrettl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/speckbrettl.jpg" alt="Speckbrettl">
+                        <div class="gallery-item-caption" data-de="Speckbrettl" data-it="Tagliere di Speck" data-en="Speck Platter">Speckbrettl</div>
+                    </a>
+                    <a href="img/wedges.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/wedges.jpg" alt="Wedges">
+                        <div class="gallery-item-caption" data-de="Kartoffel Wedges" data-it="Spicchi di Patate" data-en="Potato Wedges">Kartoffel Wedges</div>
+                    </a>
+                    <a href="img/schmorrn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/schmorrn.jpg" alt="Kaiserschmarrn">
+                        <div class="gallery-item-caption" data-de="Kaiserschmarrn" data-it="Kaiserschmarrn" data-en="Kaiserschmarrn">Kaiserschmarrn</div>
+                    </a>
+                    <a href="img/kneidl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kneidl.jpg" alt="Knödel">
+                        <div class="gallery-item-caption" data-de="Knödel" data-it="Canederli" data-en="Dumplings">Knödel</div>
+                    </a>
+                    <a href="img/teigtaschn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/teigtaschn.jpg" alt="Teigtaschen">
+                        <div class="gallery-item-caption" data-de="Teigtaschen" data-it="Ravioli" data-en="Pasta Pockets">Teigtaschen</div>
+                    </a>
+                    <a href="img/nudlpfandl.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/nudlpfandl.jpg" alt="Nudelpfandl">
+                        <div class="gallery-item-caption" data-de="Nudelpfandl" data-it="Padella di Pasta" data-en="Pasta Pan">Nudelpfandl</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hofeigene Produkte / Farm Products Category -->
+            <div class="gallery-category">
+                <h3 id="categoryFarm">Hofeigene Produkte</h3>
+                <div class="gallery-grid">
+                    <a href="img/steak.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/steak.jpg" alt="Fleisch vom Hof">
+                        <div class="gallery-item-caption" data-de="Rindfleisch vom Hof" data-it="Carne Bovina della Fattoria" data-en="Beef from the Farm">Rindfleisch vom Hof</div>
+                    </a>
+                    <a href="img/kartoffel.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kartoffel.jpg" alt="Kartoffeln">
+                        <div class="gallery-item-caption" data-de="Kartoffel Lieferung" data-it="Consegna di Patate" data-en="Potato Delivery">Kartoffel Lieferung</div>
+                    </a>
+                    <a href="img/kartoffel_ernte_2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/kartoffel_ernte_2.jpg" alt="Kartoffel Ernte">
+                        <div class="gallery-item-caption" data-de="Kartoffel Ernte" data-it="Raccolta di Patate" data-en="Potato Harvest">Kartoffel Ernte</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Getränke & Desserts / Drinks & Desserts Category -->
+            <div class="gallery-category">
+                <h3 id="categoryDrinks">Getränke & Desserts</h3>
+                <div class="gallery-grid">
+                    <a href="img/drinks.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/drinks.jpg" alt="Getränke">
+                        <div class="gallery-item-caption" data-de="Getränke" data-it="Bevande" data-en="Drinks">Getränke</div>
+                    </a>
+                    <a href="img/strudl_snow.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/strudl_snow.jpg" alt="Strudel">
+                        <div class="gallery-item-caption" data-de="Apfelstrudel" data-it="Strudel di Mele" data-en="Apple Strudel">Apfelstrudel</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Die Hütte / The Hut Category -->
+            <div class="gallery-category">
+                <h3 id="categoryHut">Die Hütte</h3>
+                <div class="gallery-grid">
+                    <a href="img/hitte_sunrise.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_sunrise.jpg" alt="Sonnenaufgang">
+                        <div class="gallery-item-caption" data-de="Hütte bei Sonnenaufgang" data-it="Rifugio all'Alba" data-en="Hut at Sunrise">Hütte bei Sonnenaufgang</div>
+                    </a>
+                    <a href="img/hitte.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte.jpg" alt="Huiba Hitte">
+                        <div class="gallery-item-caption" data-de="Huiba Hitte" data-it="Huiba Hitte" data-en="Huiba Hitte">Huiba Hitte</div>
+                    </a>
+                    <a href="img/hitte_ausn.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_ausn.jpg" alt="Außenansicht">
+                        <div class="gallery-item-caption" data-de="Außenansicht" data-it="Vista Esterna" data-en="Exterior View">Außenansicht</div>
+                    </a>
+                    <a href="img/terrasse_2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/terrasse_2.jpg" alt="Terrasse">
+                        <div class="gallery-item-caption" data-de="Terrasse" data-it="Terrazza" data-en="Terrace">Terrasse</div>
+                    </a>
+                    <a href="img/terrasse.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/terrasse.jpg" alt="Terrasse Ansicht">
+                        <div class="gallery-item-caption" data-de="Terrasse Ansicht" data-it="Vista della Terrazza" data-en="Terrace View">Terrasse Ansicht</div>
+                    </a>
+                    <a href="img/hitte_innen.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_innen.jpg" alt="Innenraum">
+                        <div class="gallery-item-caption" data-de="Innenraum" data-it="Interno" data-en="Interior">Innenraum</div>
+                    </a>
+                    <a href="img/stube.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/stube.jpg" alt="Stube">
+                        <div class="gallery-item-caption" data-de="Stube" data-it="Stube" data-en="Dining Room">Stube</div>
+                    </a>
+                    <a href="img/hitte_voll.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte_voll.jpg" alt="Volle Hütte">
+                        <div class="gallery-item-caption" data-de="Gemütliches Ambiente" data-it="Ambiente Accogliente" data-en="Cozy Atmosphere">Gemütliches Ambiente</div>
+                    </a>
+                    <a href="img/hitte-sommer.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/hitte-sommer.jpg" alt="Sommer">
+                        <div class="gallery-item-caption" data-de="Sommer auf der Alm" data-it="Estate sull'Alpeggio" data-en="Summer on the Alp">Sommer auf der Alm</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Back to home button -->
+            <div class="text-center mt-5">
+                <a href="index.html" class="btn btn-primary btn-lg" id="backButton">Zurück zur Startseite</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mastfoot pb-5 bg-white section-padding pb-0">
+        <div class="inner container">
+             <div class="row">
+
+                <!-- desktop -->
+             	<div class="col-lg-4 only-desktop">
+             		<div class="footer-widget pr-lg-5 pr-0">
+    	         		<p>Prackenweg 32<br>I-39030 Olang<br><span id="footerLocation">Südtirol Italien</span></p>
+    				
+    					<p><span id="footerPhone">Telefon</span>: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
+    					<p><span id="footerMobile">Privat</span>: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
+    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+    					
+    					<p><span id="footerVAT">Mwst. Nummer</span>: IT 01480450210</p>
+             		</div>
+             	</div>
+
+                 <!-- mobile -->
+                 <div class="middle col-sm-12 only-mobile">
+                    <div class="footer-widget middle">
+                        <p>Prackenweg 32<br>I-39030 Olang<br><span id="footerLocationMobile">Südtirol Italien</span></p>
+    				
+    					<p><span id="footerPhoneMobile">Telefon</span>: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
+    					<p><span id="footerMobileMobile">Privat</span>: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
+    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+    					
+    					<p><span id="footerVATMobile">Mwst. Nummer</span>: IT 01480450210</p>
+                    </div>
+                </div>
+
+                 <!-- desktop -->
+             	<div class="col-lg-5 only-desktop">
+             		<div class="footer-widget px-lg-5 px-0">
+             			<h4 id="footerHours">Öffnungszeiten</h4>
+                        <p><strong id="footerSeason">Saison von 01.12.2024 bis 30.03.2025</strong></p>
+    	         		<ul class="list-unstyled open-hours">
+    		                <li class="d-flex justify-content-between"><span id="dayMon">Montag</span><span>9:00 - 16:00 <span id="timeLabel">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayTue">Dienstag</span><span>9:00 - 16:00 <span id="timeLabel2">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayWed">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabel3">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayThu">Donnerstag</span><span>9:00 - 16:00 <span id="timeLabel4">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayFri">Freitag</span><span>9:00 - 16:00 <span id="timeLabel5">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="daySat">Samstag</span><span>9:00 - 16:00 <span id="timeLabel6">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="daySun">Sonntag</span><span> 9:00 - 16:00 <span id="timeLabel7">Uhr</span></span></li>
+    		              </ul>
+             		</div>
+             	</div>
+
+                  <!-- mobile -->
+             	<div class="col-sm-12 middle only-mobile padding-top">
+                    <div class="footer-widget middle">
+                        <h4 id="footerHoursMobile">Öffnungszeiten</h4>
+                       <p><strong id="footerSeasonMobile">Saison vom 30.11.2024 bis 30.03.2025</strong></p>
+                       <div class="container mx-auto w-75 middle">
+                        <ul class="list-unstyled open-hours">
+    		                <li class="d-flex justify-content-between"><span id="dayMonMobile">Montag</span><span>9:00 - 16:00 <span id="timeLabelMobile">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayTueMobile">Dienstag</span><span>9:00 - 16:00 <span id="timeLabelMobile2">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayWedMobile">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabelMobile3">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayThuMobile">Donnerstag</span><span>9:00 - 16:00 <span id="timeLabelMobile4">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="dayFriMobile">Freitag</span><span>9:00 - 16:00 <span id="timeLabelMobile5">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="daySatMobile">Samstag</span><span>9:00 - 16:00 <span id="timeLabelMobile6">Uhr</span></span></li>
+    		                <li class="d-flex justify-content-between"><span id="daySunMobile">Sonntag</span><span> 9:00 - 16:00 <span id="timeLabelMobile7">Uhr</span></span></li>
+    		              </ul>
+                        </div>     
+                    </div>
+                </div>
+
+             	 <!-- desktop align end -->
+                  <div class="col-lg-3 end only-desktop">
+                    <div class="footer-widget end">
+                       <nav class="nav nav-mastfoot end justify-content-end">
+                           <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
+                               <i class="fab icon-size-2 fa-facebook-f"></i>
+                           </a>
+                           <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
+                               <i class="fab icon-size-2 fa-instagram"></i>
+                           </a>
+                       </nav>
+                       <div class="w-100 ">
+                           <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
+                       </div>
+                    </div>
+                </div>
+
+               <!-- mobile align center -->
+               <div class="col-lg-3 middle only-mobile padding-top">
+                   <div class="footer-widget middle">
+                      <nav class="nav nav-mastfoot end justify-content-center">
+                          <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
+                              <i class="fab icon-size-2 fa-facebook-f"></i>
+                          </a>
+                          <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
+                              <i class="fab icon-size-2 fa-instagram"></i>
+                          </a>
+                      </nav>
+                      <div class="w-100">
+                          <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
+                      </div>
+                   </div>
+               </div>
+             	
+                
+            </div>
+        </div>
+    	<section>
+            
+            <div class="col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 48px;">
+                <a href="gallery.html" style="margin-right: 20px;" id="footerGallery">Galerie</a>
+                <a href="impressum.html" id="footerImprint">Impressum</a>
+            </div>
+            
+    
+    		<div class="col-md-12 d-flex align-items-center" style="padding-top:48px">
+             	<p class="mx-auto text-center mb-0">Copyright 2024. All Right Reserved. Design by Huiba Family</p>
+            </div>
+        
+    	</section>
+    	
+    </footer>	
+    </div>
+
+    </div>
+    	<!-- External JS -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    	<script src="vendor/bootstrap/popper.min.js"></script>
+    	<script src="vendor/bootstrap/bootstrap.min.js"></script>
+    	<script src="vendor/select2/select2.min.js "></script>
+    	<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+    	<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js"></script>
+    	<script src="vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    	<!-- Main JS -->
+    	<script src="js/app.min.js "></script>
+        
+        <!-- Language Switcher -->
+        <script>
+            const translations = {
+                de: {
+                    galleryTitle: 'Unsere Produktgalerie',
+                    gallerySubtitle: 'Hausgemachte Köstlichkeiten und regionale Spezialitäten',
+                    categoryDishes: 'Unsere Gerichte',
+                    categoryFarm: 'Hofeigene Produkte',
+                    categoryDrinks: 'Getränke & Desserts',
+                    categoryHut: 'Die Hütte',
+                    backButton: 'Zurück zur Startseite',
+                    homeLink: 'index.html',
+                    footerLocation: 'Südtirol Italien',
+                    footerPhone: 'Telefon',
+                    footerMobile: 'Privat',
+                    footerVAT: 'Mwst. Nummer',
+                    footerHours: 'Öffnungszeiten',
+                    footerSeason: 'Saison von 01.12.2024 bis 30.03.2025',
+                    footerGallery: 'Galerie',
+                    footerImprint: 'Impressum',
+                    timeLabel: 'Uhr',
+                    dayMon: 'Montag', dayTue: 'Dienstag', dayWed: 'Mittwoch', dayThu: 'Donnerstag',
+                    dayFri: 'Freitag', daySat: 'Samstag', daySun: 'Sonntag'
+                },
+                it: {
+                    galleryTitle: 'La Nostra Galleria',
+                    gallerySubtitle: 'Delizie fatte in casa e specialità regionali',
+                    categoryDishes: 'I Nostri Piatti',
+                    categoryFarm: 'Prodotti della Fattoria',
+                    categoryDrinks: 'Bevande e Dessert',
+                    categoryHut: 'Il Rifugio',
+                    backButton: 'Torna alla Home',
+                    homeLink: 'index_it.html',
+                    footerLocation: 'Alto Adige Italia',
+                    footerPhone: 'Telefono',
+                    footerMobile: 'Privato',
+                    footerVAT: 'IVA',
+                    footerHours: 'Orari di apertura',
+                    footerSeason: 'Stagione dal 01.12.2024 al 30.03.2025',
+                    footerGallery: 'Galleria',
+                    footerImprint: 'Impronta',
+                    timeLabel: '',
+                    dayMon: 'Lunedì', dayTue: 'Martedì', dayWed: 'Mercoledì', dayThu: 'Giovedì',
+                    dayFri: 'Venerdì', daySat: 'Sabato', daySun: 'Domenica'
+                },
+                en: {
+                    galleryTitle: 'Our Product Gallery',
+                    gallerySubtitle: 'Homemade delicacies and regional specialties',
+                    categoryDishes: 'Our Dishes',
+                    categoryFarm: 'Farm Products',
+                    categoryDrinks: 'Drinks & Desserts',
+                    categoryHut: 'The Hut',
+                    backButton: 'Back to Home',
+                    homeLink: 'index_en.html',
+                    footerLocation: 'Southtyrol Italy',
+                    footerPhone: 'Phone',
+                    footerMobile: 'Mobile',
+                    footerVAT: 'VAT',
+                    footerHours: 'Opening hours',
+                    footerSeason: 'Season from 01.12.2024 to 30.03.2025',
+                    footerGallery: 'Gallery',
+                    footerImprint: 'Imprint',
+                    timeLabel: '',
+                    dayMon: 'Monday', dayTue: 'Tuesday', dayWed: 'Wednesday', dayThu: 'Thursday',
+                    dayFri: 'Friday', daySat: 'Saturday', daySun: 'Sunday'
+                }
+            };
+
+            function setLanguage(lang) {
+                localStorage.setItem('galleryLanguage', lang);
+                updateContent(lang);
+            }
+
+            function updateContent(lang) {
+                const t = translations[lang];
+                
+                // Update main content
+                document.getElementById('galleryTitle').textContent = t.galleryTitle;
+                document.getElementById('gallerySubtitle').textContent = t.gallerySubtitle;
+                document.getElementById('categoryDishes').textContent = t.categoryDishes;
+                document.getElementById('categoryFarm').textContent = t.categoryFarm;
+                document.getElementById('categoryDrinks').textContent = t.categoryDrinks;
+                document.getElementById('categoryHut').textContent = t.categoryHut;
+                document.getElementById('backButton').textContent = t.backButton;
+                document.getElementById('homeLink').href = t.homeLink;
+                
+                // Update footer
+                ['', 'Mobile'].forEach(suffix => {
+                    const el = document.getElementById('footerLocation' + suffix);
+                    if (el) el.textContent = t.footerLocation;
+                    
+                    const phone = document.getElementById('footerPhone' + suffix);
+                    if (phone) phone.textContent = t.footerPhone;
+                    
+                    const mobile = document.getElementById('footerMobile' + suffix);
+                    if (mobile) mobile.textContent = t.footerMobile;
+                    
+                    const vat = document.getElementById('footerVAT' + suffix);
+                    if (vat) vat.textContent = t.footerVAT;
+                    
+                    const hours = document.getElementById('footerHours' + suffix);
+                    if (hours) hours.textContent = t.footerHours;
+                    
+                    const season = document.getElementById('footerSeason' + suffix);
+                    if (season) season.textContent = t.footerSeason;
+                    
+                    // Update day names
+                    ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].forEach(day => {
+                        const el = document.getElementById('day' + day + suffix);
+                        if (el) el.textContent = t['day' + day];
+                    });
+                    
+                    // Update time labels
+                    for (let i = 1; i <= 7; i++) {
+                        const label = document.getElementById('timeLabel' + (i > 1 ? i : '') + suffix);
+                        if (label) label.textContent = t.timeLabel;
+                    }
+                });
+                
+                document.getElementById('footerGallery').textContent = t.footerGallery;
+                const imprintEl = document.getElementById('footerImprint');
+                imprintEl.textContent = t.footerImprint;
+                imprintEl.href = lang === 'de' ? 'impressum.html' : 'impressum_' + lang + '.html';
+                
+                // Update image captions
+                document.querySelectorAll('.gallery-item-caption').forEach(caption => {
+                    const text = caption.getAttribute('data-' + lang);
+                    if (text) caption.textContent = text;
+                });
+                
+                // Update HTML lang attribute
+                document.documentElement.lang = lang;
+            }
+
+            // Auto-detect language on page load
+            window.addEventListener('DOMContentLoaded', function() {
+                let lang = localStorage.getItem('galleryLanguage');
+                
+                if (!lang) {
+                    // Detect browser language
+                    const browserLang = navigator.language || navigator.userLanguage;
+                    if (browserLang.startsWith('de')) lang = 'de';
+                    else if (browserLang.startsWith('it')) lang = 'it';
+                    else lang = 'en';
+                }
+                
+                updateContent(lang);
+            });
+        </script>
+    </body>
+    </html>
