@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700|Playfair+Display:400,500,600,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700|Inter:300,400,500,600,700&display=swap">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -42,9 +42,9 @@
     
     <!-- Custom Styles -->
     <style>
-        /* Culinary-focused body font */
+        /* Modern, clean body font */
         body {
-            font-family: 'Playfair Display', serif !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
         }
         
         /* Keep headings with Josefin Sans for contrast */
@@ -56,16 +56,18 @@
         @media (min-width: 1600px) {
             .mastfoot {
                 background-color: #ffffff !important;
+                background-image: none !important;
             }
         }
         
         /* Multilingual welcome styling */
         .multilingual-welcome {
-            font-size: 0.5em;
+            font-size: 0.45em;
             display: block;
             font-weight: 400;
-            opacity: 0.7;
-            margin-top: 10px;
+            line-height: 1.5;
+            margin-top: 15px;
+            white-space: pre-line;
         }
     </style>
 
@@ -112,7 +114,8 @@
             <div class="d-flex align-items-center justify-content-center">
 		     <h1 class="display-4 mb-5 section-padding text-center">
                 <a href="#welcome" id="heroWelcome">Hoila</a><br>
-                <span class="multilingual-welcome">Welcome • Benvenuti</span>
+                <span class="multilingual-welcome" id="multilingualWelcome">Benvenuti
+Welcome</span>
             </h1>
 		       <div class="mb-2">
 		    	<!-- <a class="btn btn-primary btn-shadow btn-lg" href="#welcome" role="button">Mochts enk fein</a> -->
@@ -609,11 +612,11 @@
             const multilingualWelcome = document.querySelector('.multilingual-welcome');
             if (multilingualWelcome) {
                 if (lang === 'de') {
-                    multilingualWelcome.textContent = 'Welcome • Benvenuti';
+                    multilingualWelcome.textContent = 'Benvenuti\nWelcome';
                 } else if (lang === 'it') {
-                    multilingualWelcome.textContent = 'Hoila • Welcome';
+                    multilingualWelcome.textContent = 'Hoila\nWelcome';
                 } else {
-                    multilingualWelcome.textContent = 'Hoila • Benvenuti';
+                    multilingualWelcome.textContent = 'Hoila\nBenvenuti';
                 }
             }
             
