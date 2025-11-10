@@ -54,9 +54,28 @@
         
         /* Footer white background for readability - only above 1600px */
         @media (min-width: 1600px) {
-            .mastfoot {
-                background-color: #ffffff !important;
+            .mastfoot,
+            footer.mastfoot {
+                background: rgba(255, 255, 255, 0.95) !important;
+                background-color: rgba(255, 255, 255, 0.95) !important;
                 background-image: none !important;
+                backdrop-filter: blur(2px);
+                -webkit-backdrop-filter: blur(2px);
+            }
+        }
+        
+        /* Ensure footer text is readable with proper contrast */
+        @media (min-width: 1600px) {
+            .mastfoot * {
+                color: #000 !important;
+            }
+            
+            .mastfoot a {
+                color: #39312a !important;
+            }
+            
+            .mastfoot a:hover {
+                color: #000 !important;
             }
         }
         
