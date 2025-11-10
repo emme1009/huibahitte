@@ -52,9 +52,11 @@
             font-family: 'Josefin Sans', sans-serif !important;
         }
         
-        /* Footer white background for readability */
-        footer {
-            background-color: #ffffff !important;
+        /* Footer white background for readability - only above 1600px */
+        @media (min-width: 1600px) {
+            footer {
+                background-color: #ffffff !important;
+            }
         }
         
         .gallery-grid {
