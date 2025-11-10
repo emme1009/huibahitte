@@ -102,6 +102,11 @@
             height: 200px;
             width: 100%;
             object-fit: cover;
+            /* Performance optimizations */
+            image-rendering: optimizeQuality;
+            image-rendering: -webkit-optimize-contrast;
+            loading: lazy;
+            decoding: async;
         }
         
         /* Navigation improvements */
@@ -301,7 +306,7 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="gallery-preview-item">
                         <div class="thumb-menu">
-                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/family-work.jpg" alt="Familienbetrieb"/>
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/family-work.jpg" alt="Familienbetrieb" loading="lazy" decoding="async"/>
                             <h6 id="galleryFamily">Familienbetrieb</h6>
                             <p class="small text-muted" id="galleryFamilyDesc">70 Jahre Tradition</p>
                         </div>
@@ -310,7 +315,7 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="gallery-preview-item">
                         <div class="thumb-menu">
-                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/kuh-weide.jpeg" alt="Kühe"/>
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/kuh-weide.jpg" alt="Kühe" loading="lazy" decoding="async"/>
                             <h6 id="galleryCows">Unsere Kühe</h6>
                             <p class="small text-muted" id="galleryCowsDesc">Auf 1800m Höhe</p>
                         </div>
@@ -319,7 +324,7 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="gallery-preview-item">
                         <div class="thumb-menu">
-                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/kartoffeln.jpg" alt="Regionale Produkte"/>
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/kartoffeln.jpg" alt="Regionale Produkte" loading="lazy" decoding="async"/>
                             <h6 id="galleryProducts">Regionale Produkte</h6>
                             <p class="small text-muted" id="galleryProductsDesc">Direkt vom Hof</p>
                         </div>
@@ -328,7 +333,7 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="gallery-preview-item">
                         <div class="thumb-menu">
-                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/sonnenaufgang.jpeg" alt="Hüttenleben"/>
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/sonnenaufgang.jpg" alt="Hüttenleben" loading="lazy" decoding="async"/>
                             <h6 id="galleryHutLife">Hüttenleben</h6>
                             <p class="small text-muted" id="galleryHutLifeDesc">Almleben pur</p>
                         </div>
@@ -338,7 +343,7 @@
             
             <!-- Gallery CTA Button -->
             <div class="text-center mt-4">
-                <a href="gallery.html" class="btn btn-primary btn-shadow btn-lg" id="galleryCtaMain">
+                <a href="gallery.html" class="btn btn-primary  btn-lg" id="galleryCtaMain">
                     <i class="fas fa-camera mr-2"></i>Komplette Galerie ansehen
                 </a>
             </div>
@@ -603,7 +608,7 @@
                 story2Text: 'Einige unserer Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten. Im Winter wurde die Alm verpachtet und als Skihütte genutzt. 2022 haben wir die Hütte als Familie selbst übernommen und führen sie unter unserem Hofnamen „Huiba".',
                 gallerySubheading: 'Familienbetrieb',
                 galleryPreviewTitle: 'Unsere Galerie',
-                galleryPreviewText: 'Entdeckt die Geschichte unseres Familienbetriebs, unsere 70-jährige Hütte, die Almwirtschaft mit unseren Kühen und regionale Produkte direkt vom Hof.',
+                galleryPreviewText: 'Entdeckt die Geschichte unseres Familienbetriebs, die Almwirtschaft mit unseren Kühen und regionale Produkte direkt vom Hof.',
                 galleryFamily: 'Familienbetrieb',
                 galleryFamilyDesc: 'Traditionelle Landwirtschaft',
                 galleryCows: 'Unsere Kühe',
@@ -646,7 +651,7 @@
                 kitchenClosing: 'Lasciatevi ispirare dai gusti!',
                 gallerySubheading: 'Azienda Familiare',
                 galleryPreviewTitle: 'La Nostra Galleria',
-                galleryPreviewText: 'Scoprite la storia della nostra azienda familiare, il nostro rifugio di 70 anni, l\'alpeggio estivo con le nostre mucche e prodotti regionali direttamente dalla fattoria.',
+                galleryPreviewText: 'Scoprite la storia della nostra azienda familiare, l\'alpeggio estivo con le nostre mucche e prodotti regionali direttamente dalla fattoria.',
                 galleryFamily: 'Azienda Familiare',
                 galleryFamilyDesc: 'Agricoltura tradizionale',
                 galleryCows: 'Le Nostre Mucche',
@@ -705,7 +710,7 @@
                 story2Text: 'Some of our cows and young cattle graze on the ski slopes during the summer months. In winter, the alpine pasture was leased and used as a ski hut. In 2022, we took over the hut as a family and run it under our farm name "Huiba".',
                 gallerySubheading: 'Family Business',
                 galleryPreviewTitle: 'Our Gallery',
-                galleryPreviewText: 'Discover the story of our family farm, our 70-year-old hut, summer alpine pasturing with our cows and regional products directly from the farm.',
+                galleryPreviewText: 'Discover the story of our family farm, summer alpine pasturing with our cows and regional products directly from the farm.',
                 galleryFamily: 'Family Business',
                 galleryFamilyDesc: 'Traditional farming',
                 galleryCows: 'Our Cows',

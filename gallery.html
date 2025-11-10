@@ -161,7 +161,7 @@
     </nav>		
 
     <!-- Gallery Section -->
-    <section class="bg-white section-padding">
+    <section class="bg-white">
         <div class="container">
             <!-- Logo and Title -->
             <div class="text-center mb-5">
@@ -188,8 +188,8 @@
                     <a href="img/gallery/family.jpeg" class="gallery-item" data-featherlight="image">
                         <img src="img/gallery/family.jpeg" alt="Familie Huber" loading="lazy">
                     </a>
-                    <a href="img/gallery/family-2.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/family-2.jpeg" alt="Familientradition" loading="lazy">
+                    <a href="img/gallery/family-2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/family-2.jpg" alt="Familientradition" loading="lazy">
                     </a>
                     <a href="img/gallery/hof.jpg" class="gallery-item" data-featherlight="image">
                         <img src="img/gallery/hof.jpg" alt="Huiba Hof" loading="lazy">
@@ -199,12 +199,12 @@
                     </a>
 
                     
-                    <a href="img/gallery/kuh-2.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-2.jpeg" alt="Urtal" loading="lazy">
+                    <a href="img/gallery/kuh-2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/kuh-2.jpg" alt="Urtal" loading="lazy">
                     </a>
                     
-                    <a href="img/gallery/chef-dog.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/chef-dog.jpeg" alt="Küchenhund" loading="lazy">
+                    <a href="img/gallery/chef-dog.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/chef-dog.jpg" alt="Küchenhund" loading="lazy">
                     </a>
                     
                     <a href="img/gallery/stier.jpg" class="gallery-item" data-featherlight="image">
@@ -217,26 +217,26 @@
             <div class="gallery-category">
                 <h3 id="cowsTitle">Unsere Kühe und Viehzucht</h3>
                 <div class="gallery-grid">
-                    <a href="img/gallery/kuh-weide.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-weide.jpeg" alt="Kühe auf der Weide" loading="lazy">
+                    <a href="img/gallery/kuh-weide.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/kuh-weide.jpg" alt="Kühe auf der Weide" loading="lazy">
                     </a>
                     <a href="img/gallery/kuh-alm.jpg" class="gallery-item" data-featherlight="image">
                         <img src="img/gallery/kuh-alm.jpg" alt="Kühe auf der Alm" loading="lazy">
                     </a>
-                    <a href="img/gallery/kuh.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh.jpeg" alt="Unsere Kuh" loading="lazy">
+                    <a href="img/gallery/kuh.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/kuh.jpg" alt="Unsere Kuh" loading="lazy">
                     </a>
-                    <a href="img/gallery/kalb.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kalb.jpeg" alt="Kalb" loading="lazy">
+                    <a href="img/gallery/kalb.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/kalb.jpg" alt="Kalb" loading="lazy">
                     </a>
-                    <a href="img/gallery/kuh-weide-2.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-weide-2.jpeg" alt="Vieh auf der Weide" loading="lazy">
+                    <a href="img/gallery/kuh-weide-2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/kuh-weide-2.jpg" alt="Vieh auf der Weide" loading="lazy">
                     </a>
                     <a href="img/gallery/kuh-stall.jpg" class="gallery-item" data-featherlight="image">
                         <img src="img/gallery/kuh-stall.jpg" alt="Im Stall" loading="lazy">
                     </a>
-                    <a href="img/gallery/kuh-winter.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-winter.jpeg" alt="Kühe im Winter" loading="lazy">
+                    <a href="img/gallery/kuh-winter.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/kuh-winter.jpg" alt="Kühe im Winter" loading="lazy">
                     </a>
                     <a href="img/gallery/heuernte.jpg" class="gallery-item" data-featherlight="image">
                         <img src="img/gallery/heuernte.jpg" alt="Heuernte" loading="lazy">
@@ -307,8 +307,8 @@
                     <a href="img/hitte_old.jpg" class="gallery-item" data-featherlight="image">
                         <img src="img/hitte_old.jpg" alt="Alte Hütte" loading="lazy">
                     </a>
-                    <a href="img/gallery/sonnenaufgang-2.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/sonnenaufgang-2.jpeg" alt="Morgenstimmung" loading="lazy">
+                    <a href="img/gallery/sonnenaufgang-2.jpg" class="gallery-item" data-featherlight="image">
+                        <img src="img/gallery/sonnenaufgang-2.jpg" alt="Morgenstimmung" loading="lazy">
                     </a>
                     <a href="img/hitte.jpg" class="gallery-item" data-featherlight="image">
                         <img src="img/hitte.jpg" alt="Huiba Hitte" loading="lazy">
@@ -612,31 +612,60 @@
             
             updateContent(lang);
             
-            // Optimize image loading
+            // Optimize image loading with progressive enhancement
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            // Add compression and quality hints
+            document.querySelectorAll('img').forEach(img => {
+                // Add decoding hint for better performance
+                img.decoding = 'async';
+                
+                // Add loading hint for above-the-fold images
+                const rect = img.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    img.loading = 'eager';
+                }
+            });
             
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
+                            
+                            // Progressive loading with quality improvement
                             img.onload = () => {
                                 img.classList.add('loaded');
+                                // Prefetch next images for smoother experience
+                                const nextImg = img.closest('.gallery-item')?.nextElementSibling?.querySelector('img');
+                                if (nextImg && !nextImg.classList.contains('loaded')) {
+                                    nextImg.loading = 'eager';
+                                }
                             };
+                            
                             if (img.complete) {
                                 img.classList.add('loaded');
                             }
                             observer.unobserve(img);
                         }
                     });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.1
                 });
                 
                 lazyImages.forEach(img => imageObserver.observe(img));
             } else {
-                // Fallback for older browsers
-                lazyImages.forEach(img => {
-                    img.classList.add('loaded');
-                });
+                // Fallback for older browsers with delayed loading
+                let loadIndex = 0;
+                const loadNext = () => {
+                    if (loadIndex < lazyImages.length) {
+                        lazyImages[loadIndex].classList.add('loaded');
+                        loadIndex++;
+                        setTimeout(loadNext, 100); // Stagger loading
+                    }
+                };
+                loadNext();
             }
         });
     </script>
