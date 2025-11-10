@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700|Playfair+Display:400,500,600,700&display=swap">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -42,6 +42,21 @@
 
     <!-- Gallery specific styles -->
     <style>
+        /* Culinary-focused body font */
+        body {
+            font-family: 'Playfair Display', serif !important;
+        }
+        
+        /* Keep headings with Josefin Sans for contrast */
+        h1, h2, h3, h4, h5, h6, .heading {
+            font-family: 'Josefin Sans', sans-serif !important;
+        }
+        
+        /* Footer white background for readability */
+        footer {
+            background-color: #ffffff !important;
+        }
+        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
