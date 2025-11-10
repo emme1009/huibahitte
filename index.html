@@ -115,16 +115,16 @@
 
                 <div class="col-sm-12 col-lg-7 pl-md-0 pl-lg-4 padding-top">
                     <div class="heading-section pl-lg-5 ml-md-0">
-                        <span class="subheading">
+                        <span class="subheading" id="welcomeSubheading">
                             Schön, dass ihr hier seid
                         </span>
-                        <h2>
+                        <h2 id="welcomeTitle">
                             Mochts enk fein
                         </h2>
                     </div>
                     <div class="pl-lg-5 ml-md-0">
-                        <p>Wir, das Huiba Hittn Team, möchten euch herzlich auf unserer Hütte begrüßen. Unter dem Motto „ANFOCH & GUIT“ verarbeiten wir regionale Produkte mit kurzen Transportwegen zu leckeren Speisen. Einige Lebensmittel stammen direkt von unserem Hof, dem Huiba Hof in Mitterolang.</p>
-                        <h3 class="mt-5">Hofeigene Produkte</h3>
+                        <p id="welcomeText">Wir, das Huiba Hittn Team, möchten euch herzlich auf unserer Hütte begrüßen. Unter dem Motto „ANFOCH & GUIT“ verarbeiten wir regionale Produkte mit kurzen Transportwegen zu leckeren Speisen. Einige Lebensmittel stammen direkt von unserem Hof, dem Huiba Hof in Mitterolang.</p>
+                        <h3 class="mt-5" id="farmProductsTitle">Hofeigene Produkte</h3>
                         <div class="row">
                             <div class="col-4">
                                 <div class="thumb-menu">
@@ -158,13 +158,14 @@
     <div class="container">
         <div class="section-content">
             <div class="heading-section text-center">
-                <span class="subheading">
+                <span class="subheading" id="kitchenSubheading">
                     Gaumenfreuden
                 </span>
-                <h1 class="heading">
+                <h1 class="heading" id="kitchenTitle">
                     Unsere Küche
                 </h1>
                 <p>
+                    <span id="kitchenText">
                     Kehrt ein und nehmt Platz auf unserer gemütlichen Terrasse oder in unseren Stuben. Lasst euch bedienen und verwöhnen mit herzhaften Gerichten und Getränken. Unter dem Motto „anfoch und guit“ kreiert unser Küchenteam aus hochwertigen und regionalen Produkten raffinierte Speisen. Besonders freuen wir uns, dass wir hierbei unsere hofeigenen Produkte wie unser Rindfleisch und Kartoffeln verwenden.
                     <br><br>
                     Lots enk schmeckn!
@@ -219,7 +220,7 @@
                     <h2 class="story-title"><span id="story1Title1">Skihütte im</span><br><span id="story1Title2">Winter</span></h2>
                     <div class="story-text">
                         <!-- <h3><span>Skihütte</span><br>im Winter</h3> -->
-                        <p class="pt-3">Die „Huiba Hitte“ befindet sich auf 1800m, auf der Olanger Seite des Kronplatzes, sechs Hektar Wiese gehören dazu. Seit 70 Jahren ist sie im Besitz der Familie Pörnbacher - Huber aus Olang. In den ersten 50 Jahren wurde das damals sogenannte „Ruipa Albl“ verpachtet und im Jahre 1998 unter dem Namen „Huber Alm“ neu aufgebaut. </p>
+                        <p class="pt-3" id="story1Text">Die „Huiba Hitte“ befindet sich auf 1800m, auf der Olanger Seite des Kronplatzes, sechs Hektar Wiese gehören dazu. Seit 70 Jahren ist sie im Besitz der Familie Pörnbacher - Huber aus Olang. In den ersten 50 Jahren wurde das damals sogenannte „Ruipa Albl“ verpachtet und im Jahre 1998 unter dem Namen „Huber Alm“ neu aufgebaut. </p>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
@@ -234,7 +235,7 @@
                     <h2 class="story-title"><span id="story2Title1">Weide im</span><br><span id="story2Title2">Sommer</span></h2>
                     <div class="story-text">
                         <!-- <h3><span>Weide</span><br>im Sommer</h3> -->
-                        <p class="pt-3">Einige unserer Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten. Im Winter wurde die Alm verpachtet und als Skihütte genutzt. 2022 haben wir die Hütte als Familie selbst übernommen und führen sie unter unserem Hofnamen „Huiba“.</p>
+                        <p class="pt-3" id="story2Text">Einige unserer Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten. Im Winter wurde die Alm verpachtet und als Skihütte genutzt. 2022 haben wir die Hütte als Familie selbst übernommen und führen sie unter unserem Hofnamen „Huiba“.</p>
                        
                         <!-- <p>Besonders freuen wir uns, dass wir hierbei Produkte, wie unser eigenes Rindfleisch und Kartoffeln verwenden.
                         </p> -->
@@ -449,6 +450,8 @@
                 story1Title2: 'Winter',
                 story2Title1: 'Weide im',
                 story2Title2: 'Sommer',
+                story1Text: 'Die „Huiba Hitte" befindet sich auf 1800m, auf der Olanger Seite des Kronplatzes, sechs Hektar Wiese gehören dazu. Seit 70 Jahren ist sie im Besitz der Familie Pörnbacher - Huber aus Olang. In den ersten 50 Jahren wurde das damals sogenannte „Ruipa Albl" verpachtet und im Jahre 1998 unter dem Namen „Huber Alm" neu aufgebaut.',
+                story2Text: 'Einige unserer Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten. Im Winter wurde die Alm verpachtet und als Skihütte genutzt. 2022 haben wir die Hütte als Familie selbst übernommen und führen sie unter unserem Hofnamen „Huiba".',
                 footerLocation: 'Südtirol Italien',
                 footerPhone: 'Telefon',
                 footerMobile: 'Privat',
@@ -480,6 +483,8 @@
                 story1Title2: 'inverno',
                 story2Title1: 'Pascolo in',
                 story2Title2: 'estate',
+                story1Text: 'La "Huiba Hitte" si trova a 1800 m, sul lato di Valdaora del Plan de Corones, e comprende sei ettari di prato. Da 70 anni è di proprietà della famiglia Pörnbacher - Huber di Valdaora. Nei primi 50 anni, quello che allora si chiamava "Ruipa Albl" è stato affittato e ricostruito nel 1998 con il nome di "Huber Alm".',
+                story2Text: 'Alcune delle nostre mucche e giovenche pascolano sulle piste da sci nei mesi estivi. In inverno l\'alpeggio era affittato e utilizzato come rifugio sciistico. Nel 2022 abbiamo rilevato il rifugio come famiglia e lo gestiamo con il nome della nostra fattoria "Huiba".',
                 footerLocation: 'Alto Adige Italia',
                 footerPhone: 'Telefono',
                 footerMobile: 'Privato',
@@ -511,6 +516,8 @@
                 story1Title2: 'winter',
                 story2Title1: 'Pasture in',
                 story2Title2: 'summer',
+                story1Text: 'The "Huiba Hitte" is located at 1800m, on the Olang side of the Kronplatz, with six hectares of meadow. It has been in the possession of the Pörnbacher - Huber family from Olang for 70 years. In the first 50 years, what was then called the "Ruipa Albl" was leased and rebuilt in 1998 under the name "Huber Alm".',
+                story2Text: 'Some of our cows and young cattle graze on the ski slopes during the summer months. In winter, the alpine pasture was leased and used as a ski hut. In 2022, we took over the hut as a family and run it under our farm name "Huiba".',
                 footerLocation: 'Southtyrol Italy',
                 footerPhone: 'Phone',
                 footerMobile: 'Mobile',
