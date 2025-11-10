@@ -88,6 +88,30 @@
             margin-top: 15px;
             white-space: pre-line;
         }
+        
+        /* Gallery preview styling */
+        .gallery-preview-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-preview-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-preview-item .thumb-menu img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Navigation improvements */
+        #navbar-header .navbar-nav {
+            width: 100%;
+        }
+        
+        #navbar-header .nav-link:hover {
+            color: #39312a;
+        }
     </style>
 
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
@@ -115,6 +139,7 @@
                             <a class="nav-link" href="#" onclick="setLanguage('en'); return false;">EN</a>
                         </li>
                     </div>
+                 
                 </ul>
             </div>
         </div>
@@ -195,6 +220,13 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Gallery Call-to-Action -->
+                        <div class="mt-4">
+                            <a href="gallery.html" class="btn btn-primary btn-shadow btn-lg" id="galleryCtaWelcome">
+                                <i class="fas fa-images mr-2"></i>Unsere Galerie entdecken
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,6 +275,73 @@
 
             
             
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Preview Section -->
+<section id="gallery-preview" class="bg-white section-padding">
+    <div class="container">
+        <div class="section-content">
+            <div class="heading-section text-center">
+                <span class="subheading" id="gallerySubheading">
+                    Familienbetrieb
+                </span>
+                <h1 class="heading" id="galleryPreviewTitle">
+                    Unsere Galerie
+                </h1>
+                <p id="galleryPreviewText">
+                    Entdeckt den Familienbetrieb, unsere Kühe und Viehzucht, 
+                    regionale Produkte vom Hof und das authentische Leben auf der Hütte auf 1800m Höhe.
+                </p>
+            </div>
+            
+            <!-- Gallery Preview Grid -->
+            <div class="row mt-5">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="gallery-preview-item">
+                        <div class="thumb-menu">
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/family-work.jpg" alt="Familienbetrieb"/>
+                            <h6 id="galleryFamily">Familienbetrieb</h6>
+                            <p class="small text-muted" id="galleryFamilyDesc">70 Jahre Tradition</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="gallery-preview-item">
+                        <div class="thumb-menu">
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/kuh-weide.jpeg" alt="Kühe"/>
+                            <h6 id="galleryCows">Unsere Kühe</h6>
+                            <p class="small text-muted" id="galleryCowsDesc">Auf 1800m Höhe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="gallery-preview-item">
+                        <div class="thumb-menu">
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/kartoffeln.jpg" alt="Regionale Produkte"/>
+                            <h6 id="galleryProducts">Regionale Produkte</h6>
+                            <p class="small text-muted" id="galleryProductsDesc">Direkt vom Hof</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="gallery-preview-item">
+                        <div class="thumb-menu">
+                            <img class="img-fluid img-cover shadow rounded" src="img/gallery/sonnenaufgang.jpeg" alt="Hüttenleben"/>
+                            <h6 id="galleryHutLife">Hüttenleben</h6>
+                            <p class="small text-muted" id="galleryHutLifeDesc">Almleben pur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery CTA Button -->
+            <div class="text-center mt-4">
+                <a href="gallery.html" class="btn btn-primary btn-shadow btn-lg" id="galleryCtaMain">
+                    <i class="fas fa-camera mr-2"></i>Komplette Galerie ansehen
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -502,6 +601,24 @@
                 story2Title2: 'Sommer',
                 story1Text: 'Die „Huiba Hitte" befindet sich auf 1800m, auf der Olanger Seite des Kronplatzes, sechs Hektar Wiese gehören dazu. Seit 70 Jahren ist sie im Besitz der Familie Pörnbacher - Huber aus Olang. In den ersten 50 Jahren wurde das damals sogenannte „Ruipa Albl" verpachtet und im Jahre 1998 unter dem Namen „Huber Alm" neu aufgebaut.',
                 story2Text: 'Einige unserer Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten. Im Winter wurde die Alm verpachtet und als Skihütte genutzt. 2022 haben wir die Hütte als Familie selbst übernommen und führen sie unter unserem Hofnamen „Huiba".',
+                gallerySubheading: 'Familienbetrieb',
+                galleryPreviewTitle: 'Unsere Galerie',
+                galleryPreviewText: 'Entdeckt die Geschichte unseres Familienbetriebs, unsere 70-jährige Hütte, die Almwirtschaft mit unseren Kühen und regionale Produkte direkt vom Hof.',
+                galleryFamily: 'Familienbetrieb',
+                galleryFamilyDesc: 'Traditionelle Landwirtschaft',
+                galleryCows: 'Unsere Kühe',
+                galleryCowsDesc: 'Sommerweidung auf der Alm',
+                galleryProducts: 'Regionale Produkte',
+                galleryProductsDesc: 'Direkt vom Hof',
+                galleryHutLife: 'Die Hütte',
+                galleryHutLifeDesc: '70 Jahre Familienbesitz',
+                galleryCtaWelcome: 'Unsere Galerie entdecken',
+                galleryCtaMain: 'Komplette Galerie ansehen',
+                galleryCtaStory: 'Mehr über unsere Geschichte',
+                navWelcome: 'Startseite',
+                navKitchen: 'Küche',
+                navStory: 'Geschichte',
+                navGallery: 'Galerie',
                 footerLocation: 'Südtirol Italien',
                 footerPhone: 'Telefon',
                 footerMobile: 'Privat',
@@ -527,6 +644,20 @@
                 kitchenTitle: 'La nostra cucina',
                 kitchenText: 'Fermatevi e accomodatevi sulla nostra accogliente terrazza o nelle nostre sale. Lasciatevi servire e coccolare con piatti sostanziosi e bevande. Con il motto "semplice e buono", il nostro team di cuochi crea piatti raffinati usando prodotti regionali e di alta qualità. Siamo particolarmente fieri di utilizzare i nostri prodotti agricoli cosí come anche la nostra carne bovina e le nostre patate.<br><br>',
                 kitchenClosing: 'Lasciatevi ispirare dai gusti!',
+                gallerySubheading: 'Azienda Familiare',
+                galleryPreviewTitle: 'La Nostra Galleria',
+                galleryPreviewText: 'Scoprite la storia della nostra azienda familiare, il nostro rifugio di 70 anni, l\'alpeggio estivo con le nostre mucche e prodotti regionali direttamente dalla fattoria.',
+                galleryFamily: 'Azienda Familiare',
+                galleryFamilyDesc: 'Agricoltura tradizionale',
+                galleryCows: 'Le Nostre Mucche',
+                galleryCowsDesc: 'Pascolo estivo in alpeggio',
+                galleryProducts: 'Prodotti Regionali',
+                galleryProductsDesc: 'Direttamente dalla fattoria',
+                galleryHutLife: 'Il Rifugio',
+                galleryHutLifeDesc: '70 anni di proprietà familiare',
+                galleryCtaWelcome: 'Scopri la nostra galleria',
+                galleryCtaMain: 'Visualizza galleria completa',
+                galleryCtaStory: 'Più della nostra storia',
                 storySubheading: 'La storia',
                 storyTitle: 'Il nostro "Albl"',
                 story1Title1: 'Rifugio in',
@@ -535,6 +666,10 @@
                 story2Title2: 'estate',
                 story1Text: 'La "Huiba Hitte" si trova a 1800 m, sul lato di Valdaora del Plan de Corones, e comprende sei ettari di prato. Da 70 anni è di proprietà della famiglia Pörnbacher - Huber di Valdaora. Nei primi 50 anni, quello che allora si chiamava "Ruipa Albl" è stato affittato e ricostruito nel 1998 con il nome di "Huber Alm".',
                 story2Text: 'Alcune delle nostre mucche e giovenche pascolano sulle piste da sci nei mesi estivi. In inverno l\'alpeggio era affittato e utilizzato come rifugio sciistico. Nel 2022 abbiamo rilevato il rifugio come famiglia e lo gestiamo con il nome della nostra fattoria "Huiba".',
+                navWelcome: 'Home',
+                navKitchen: 'Cucina',
+                navStory: 'Storia',
+                navGallery: 'Galleria',
                 footerLocation: 'Alto Adige Italia',
                 footerPhone: 'Telefono',
                 footerMobile: 'Privato',
@@ -568,6 +703,24 @@
                 story2Title2: 'summer',
                 story1Text: 'The "Huiba Hitte" is located at 1800m, on the Olang side of the Kronplatz, with six hectares of meadow. It has been in the possession of the Pörnbacher - Huber family from Olang for 70 years. In the first 50 years, what was then called the "Ruipa Albl" was leased and rebuilt in 1998 under the name "Huber Alm".',
                 story2Text: 'Some of our cows and young cattle graze on the ski slopes during the summer months. In winter, the alpine pasture was leased and used as a ski hut. In 2022, we took over the hut as a family and run it under our farm name "Huiba".',
+                gallerySubheading: 'Family Business',
+                galleryPreviewTitle: 'Our Gallery',
+                galleryPreviewText: 'Discover the story of our family farm, our 70-year-old hut, summer alpine pasturing with our cows and regional products directly from the farm.',
+                galleryFamily: 'Family Business',
+                galleryFamilyDesc: 'Traditional farming',
+                galleryCows: 'Our Cows',
+                galleryCowsDesc: 'Summer alpine pasture',
+                galleryProducts: 'Regional Products',
+                galleryProductsDesc: 'Directly from the farm',
+                galleryHutLife: 'The Hut',
+                galleryHutLifeDesc: '70 years family-owned',
+                galleryCtaWelcome: 'Discover our gallery',
+                galleryCtaMain: 'View complete gallery',
+                galleryCtaStory: 'More of our history',
+                navWelcome: 'Home',
+                navKitchen: 'Kitchen',
+                navStory: 'History',
+                navGallery: 'Gallery',
                 footerLocation: 'Southtyrol Italy',
                 footerPhone: 'Phone',
                 footerMobile: 'Mobile',
