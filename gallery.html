@@ -36,98 +36,46 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.min.css">
-
-    <!-- Gallery specific styles -->
-    <style>
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-            }
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            display: block;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .gallery-item img {
-                height: 180px;
-            }
-        }
-
-        .gallery-category {
-            margin-bottom: 50px;
-        }
-
-        .gallery-category-heading {
-            font-family: var(--font-heading);
-            font-size: clamp(1.45rem, 1.2rem + 0.8vw, 1.85rem);
-            margin-bottom: 25px;
-            color: var(--color-heading);
-            border-bottom: 1px solid rgba(212, 165, 116, 0.55);
-            padding-bottom: 12px;
-            text-wrap: wrap;
-        }
-    </style>
 </head>
 
 <body class="static-layout">
     <div class="boxed-page">
-        <header>
-            <nav id="navbar-header" class="navbar navbar-expand" aria-label="Sprachauswahl">
-                <div class="container">
-                    <div class="justify-content-between" id="navbarSupportedContent">
-                        <ul class="navbar-nav d-flex flex-row">
-                            <li class="nav-item">
-                                <button type="button" class="nav-link" data-lang="de">DE</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="nav-link" data-lang="it">IT</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="nav-link" data-lang="en">EN</button>
-                            </li>
-                        </ul>
+        <header class="site-header" id="navbar-header">
+            <div class="container header-inner">
+                <a class="nav-brand-link" href="index.html" aria-label="Huiba Hitte Startseite">
+                    <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte" class="nav-brand-logo" width="289" height="236">
+                </a>
+
+                <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+                    <ul class="site-nav-list">
+                        <li><a class="nav-link" href="index.html" id="navWelcome">Startseite</a></li>
+                        <li><a class="nav-link" href="index.html#kitchen" id="navKitchen">Küche</a></li>
+                        <li><a class="nav-link" href="index.html#story" id="navStory">Geschichte</a></li>
+                        <li><a class="nav-link" href="gallery.html" aria-current="page" id="navGallery">Galerie</a></li>
+                        <li><a class="nav-link" href="#contact" id="navContact">Kontakt</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
+                        <button type="button" class="lang-btn" data-lang="de">DE</button>
+                        <button type="button" class="lang-btn" data-lang="it">IT</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
                     </div>
+                    <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menü">
+                        <svg class="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+                        <svg class="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+                    </button>
                 </div>
-            </nav>
+            </div>
         </header>
 
         <main>
             <!-- Gallery Section -->
-            <section class="bg-white">
+            <section class="bg-white section-padding">
                 <div class="container">
-                    <!-- Logo and Title -->
+                    <!-- Title and Intro -->
                     <div class="text-center mb-5">
-                        <a class="navbar-brand d-flex align-items-center justify-content-center mb-3" href="index.html">
-                            <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte Logo" width="289" height="236" style="max-height: 150px; width: auto; height: auto;">
-                        </a>
                         <h1 class="display-4 mb-4" id="galleryTitle">Unsere Familienbetrieb Galerie</h1>
                         <div class="row">
                             <div class="col-lg-10 mx-auto">
@@ -136,9 +84,17 @@
                                 <p class="text-muted" id="galleryDescription3">Unter dem Motto "ANFOCH &amp; GUIT" kreieren wir aus hochwertigen, regionalen Produkten mit kurzen Transportwegen authentische Südtiroler Spezialitäten. Jedes Gericht erzählt die Geschichte unserer Familie und unserer Heimat.</p>
                             </div>
                         </div>
+
+                        <nav class="gallery-nav-pills" aria-label="Galerie-Kategorien">
+                            <a class="gallery-pill" href="#cat-family" id="pillFamily">Familienbetrieb</a>
+                            <a class="gallery-pill" href="#cat-cows" id="pillCows">Kühe &amp; Viehzucht</a>
+                            <a class="gallery-pill" href="#cat-products" id="pillProducts">Regionale Produkte</a>
+                            <a class="gallery-pill" href="#cat-dishes" id="pillDishes">Hausgemachte Gerichte</a>
+                            <a class="gallery-pill" href="#cat-hut" id="pillHut">Leben auf der Hütte</a>
+                        </nav>
                     </div>
 
-            <div class="gallery-category">
+            <div class="gallery-category" id="cat-family">
                 <h2 class="gallery-category-heading" id="familyBusinessTitle">Unser Familienbetrieb</h2>
                 <div class="gallery-grid">
                     <a href="img/gallery/family-work.jpg" class="gallery-item" data-featherlight="image">
@@ -164,7 +120,7 @@
                     </a>
                 </div>
             </div>
-            <div class="gallery-category">
+            <div class="gallery-category" id="cat-cows">
                 <h2 class="gallery-category-heading" id="cowsTitle">Unsere Kühe und Viehzucht</h2>
                 <div class="gallery-grid">
                     <a href="img/gallery/kuh-weide.jpg" class="gallery-item" data-featherlight="image">
@@ -196,7 +152,7 @@
                     </a>
                 </div>
             </div>
-            <div class="gallery-category">
+            <div class="gallery-category" id="cat-products">
                 <h2 class="gallery-category-heading" id="regionalProductsTitle">100% Regionale Produkte</h2>
                 <div class="gallery-grid">
                     <a href="img/steak.jpg" class="gallery-item" data-featherlight="image">
@@ -219,7 +175,7 @@
                     </a>
                 </div>
             </div>
-            <div class="gallery-category">
+            <div class="gallery-category" id="cat-dishes">
                 <h2 class="gallery-category-heading" id="homemadeDishesTitle">Hausgemachte Gerichte</h2>
                 <div class="gallery-grid">
                     <a href="img/speckbrettl.jpg" class="gallery-item" data-featherlight="image">
@@ -242,7 +198,7 @@
                     </a>
                 </div>
             </div>
-            <div class="gallery-category">
+            <div class="gallery-category" id="cat-hut">
                 <h2 class="gallery-category-heading" id="hutLifeTitle">Leben auf der Hütte</h2>
                 <div class="gallery-grid">
                     <a href="img/hitte_sunrise.jpg" class="gallery-item" data-featherlight="image">
@@ -281,7 +237,7 @@
         </main>
 
         <!-- FOOTER -->
-        <footer class="mastfoot pb-5 bg-white section-padding pb-0">
+        <footer id="contact" class="mastfoot pb-5 bg-white section-padding pb-0">
             <div class="inner container">
                 <div class="row">
                     <div class="col-12 col-lg-4 text-center text-lg-left">
@@ -294,12 +250,12 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-5 text-center text-lg-left pt-5 pt-lg-0">
-                        <div class="footer-widget px-lg-5 px-0">
+                    <div class="col-12 col-lg-5 text-center text-lg-left pt-4 pt-lg-0">
+                        <div class="footer-widget open-hours-card">
                             <h4 id="footerHours">Öffnungszeiten</h4>
                             <p><strong id="footerSeason">Saison von 28.11.2026 bis 29.03.2027</strong></p>
                             <div class="open-hours-wrap">
-                                <ul class="list-unstyled open-hours">
+                                <ul class="list-unstyled open-hours mb-0">
                                     <li class="d-flex justify-content-between"><span id="dayMon">Montag</span><span>9:00 - 16:00 <span id="timeLabel">Uhr</span></span></li>
                                     <li class="d-flex justify-content-between"><span id="dayTue">Dienstag</span><span>9:00 - 16:00 <span id="timeLabel2">Uhr</span></span></li>
                                     <li class="d-flex justify-content-between"><span id="dayWed">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabel3">Uhr</span></span></li>
@@ -312,13 +268,13 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-3 text-center text-lg-right pt-5 pt-lg-0">
+                    <div class="col-12 col-lg-3 text-center text-lg-right pt-4 pt-lg-0">
                         <div class="footer-widget">
-                            <nav class="nav nav-mastfoot justify-content-center justify-content-lg-end" aria-label="Social Media">
-                                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://facebook.com/huibahitte" aria-label="Huiba Hitte auf Facebook">
+                            <nav class="nav nav-mastfoot justify-content-center justify-content-lg-end" style="gap: 0.65rem;" aria-label="Social Media">
+                                <a class="social-pill" target="_blank" rel="noopener noreferrer" href="https://facebook.com/huibahitte" aria-label="Huiba Hitte auf Facebook">
                                     <i class="fab icon-size-2 fa-facebook-f" aria-hidden="true"></i>
                                 </a>
-                                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://instagram.com/huiba_hitte" aria-label="Huiba Hitte auf Instagram">
+                                <a class="social-pill" target="_blank" rel="noopener noreferrer" href="https://instagram.com/huiba_hitte" aria-label="Huiba Hitte auf Instagram">
                                     <i class="fab icon-size-2 fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </nav>
@@ -350,6 +306,16 @@
     <script>
         const translations = {
             de: {
+                navWelcome: 'Startseite',
+                navKitchen: 'Küche',
+                navStory: 'Geschichte',
+                navGallery: 'Galerie',
+                navContact: 'Kontakt',
+                pillFamily: 'Familienbetrieb',
+                pillCows: 'Kühe & Viehzucht',
+                pillProducts: 'Regionale Produkte',
+                pillDishes: 'Hausgemachte Gerichte',
+                pillHut: 'Leben auf der Hütte',
                 galleryTitle: 'Unsere Familienbetrieb Galerie',
                 galleryDescription1: 'Seit 70 Jahren ist die Huiba Hitte im Besitz der Familie Pörnbacher aus Olang. Was als "Ruipa Albl" begann, ist heute ein authentischer Familienbetrieb, der Tradition und regionale Qualität vereint.',
                 galleryDescription2: 'Unsere Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten des Kronplatzes auf 1800m Höhe. Das Fleisch und die Kartoffeln, die wir in unserer Hütte servieren, stammen direkt von unserem Huiba Hof in Mitterolang - echter "Hof zu Tisch" Genuss.',
@@ -372,6 +338,16 @@
                 dayFri: 'Freitag', daySat: 'Samstag', daySun: 'Sonntag'
             },
             it: {
+                navWelcome: 'Home',
+                navKitchen: 'Cucina',
+                navStory: 'Storia',
+                navGallery: 'Galleria',
+                navContact: 'Contatti',
+                pillFamily: 'Azienda Familiare',
+                pillCows: 'Mucche & Allevamento',
+                pillProducts: 'Prodotti Regionali',
+                pillDishes: 'Piatti Fatti in Casa',
+                pillHut: 'Vita al Rifugio',
                 galleryTitle: 'La Nostra Galleria dell\'Azienda Familiare',
                 galleryDescription1: 'Da 70 anni la Huiba Hitte è di proprietà della famiglia Pörnbacher di Valdaora. Quello che iniziò come "Ruipa Albl" è oggi un\'autentica azienda familiare che unisce tradizione e qualità regionale.',
                 galleryDescription2: 'Le nostre mucche e giovenche pascolano durante i mesi estivi sulle piste da sci del Plan de Corones a 1800m di altitudine. La carne e le patate che serviamo nel nostro rifugio provengono direttamente dalla nostra fattoria Huiba a Valdaora di mezzo - vero piacere "dalla fattoria alla tavola".',
@@ -394,6 +370,16 @@
                 dayFri: 'Venerdì', daySat: 'Sabato', daySun: 'Domenica'
             },
             en: {
+                navWelcome: 'Home',
+                navKitchen: 'Kitchen',
+                navStory: 'History',
+                navGallery: 'Gallery',
+                navContact: 'Contact',
+                pillFamily: 'Family Business',
+                pillCows: 'Cows & Cattle',
+                pillProducts: 'Regional Products',
+                pillDishes: 'Homemade Dishes',
+                pillHut: 'Hut Life',
                 galleryTitle: 'Our Family Business Gallery',
                 galleryDescription1: 'For 70 years, Huiba Hitte has been owned by the Pörnbacher family from Olang. What began as "Ruipa Albl" is today an authentic family business that combines tradition and regional quality.',
                 galleryDescription2: 'Our cows and young cattle graze during the summer months on the ski slopes of Kronplatz at 1800m altitude. The meat and potatoes we serve in our hut come directly from our Huiba farm in Mitterolang - true "farm to table" enjoyment.',
@@ -477,6 +463,28 @@
                 else lang = 'en';
             }
             updateContent(lang);
+
+            const header = document.getElementById('navbar-header');
+            const menuToggle = document.getElementById('menuToggle');
+            if (header && menuToggle) {
+                const closeMenu = () => {
+                    header.classList.remove('is-menu-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                };
+                menuToggle.addEventListener('click', function () {
+                    const isOpen = header.classList.toggle('is-menu-open');
+                    menuToggle.setAttribute('aria-expanded', String(isOpen));
+                });
+                header.querySelectorAll('.site-nav .nav-link').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') closeMenu();
+                });
+                document.addEventListener('click', function (e) {
+                    if (!header.contains(e.target)) closeMenu();
+                });
+            }
         });
     </script>
 </body>

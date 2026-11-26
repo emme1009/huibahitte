@@ -44,52 +44,9 @@
 
     <!-- Custom Styles -->
     <style>
-        /* Footer white background for readability - only above 1600px */
-        @media (min-width: 1600px) {
-            .mastfoot,
-            footer.mastfoot {
-                background: rgba(255, 255, 255, 0.95) !important;
-                background-color: rgba(255, 255, 255, 0.95) !important;
-                background-image: none !important;
-                backdrop-filter: blur(2px);
-                -webkit-backdrop-filter: blur(2px);
-            }
-
-            .mastfoot * {
-                color: #26201b !important;
-            }
-
-            .mastfoot a {
-                color: #39312a !important;
-            }
-
-            .mastfoot a:hover {
-                color: #26201b !important;
-            }
-        }
-
-        /* Gallery preview styling */
-        .gallery-preview-item {
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-preview-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-preview-item .thumb-menu img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        /* Navigation improvements */
-        #navbar-header .navbar-nav {
-            width: 100%;
-        }
-
+        /* Navigation hover accent */
         #navbar-header .nav-link:hover {
-            color: #39312a;
+            color: #856a52;
         }
     </style>
 
@@ -141,62 +98,79 @@
 
 <body class="static-layout">
     <div class="boxed-page">
-        <header>
-            <nav id="navbar-header" class="navbar navbar-expand" aria-label="Sprachauswahl">
-                <div class="container">
-                    <div class="justify-content-between" id="navbarSupportedContent">
-                        <ul class="navbar-nav d-flex flex-row">
-                            <li class="nav-item">
-                                <button type="button" class="nav-link" data-lang="de">DE</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="nav-link" data-lang="it">IT</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="nav-link" data-lang="en">EN</button>
-                            </li>
-                        </ul>
+        <header class="site-header" id="navbar-header">
+            <div class="container header-inner">
+                <a class="nav-brand-link" href="index.html" aria-label="Huiba Hitte Startseite">
+                    <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte" class="nav-brand-logo" width="289" height="236">
+                </a>
+
+                <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+                    <ul class="site-nav-list">
+                        <li><a class="nav-link" href="#welcome" id="navWelcome">Startseite</a></li>
+                        <li><a class="nav-link" href="#kitchen" id="navKitchen">Küche</a></li>
+                        <li><a class="nav-link" href="#story" id="navStory">Geschichte</a></li>
+                        <li><a class="nav-link" href="gallery.html" id="navGallery">Galerie</a></li>
+                        <li><a class="nav-link" href="#pistenplan" id="navLocation">Lage</a></li>
+                        <li><a class="nav-link" href="#contact" id="navContact">Kontakt</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="lang-switcher" role="group" aria-label="Sprachauswahl">
+                        <button type="button" class="lang-btn" data-lang="de">DE</button>
+                        <button type="button" class="lang-btn" data-lang="it">IT</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
                     </div>
+                    <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menü">
+                        <svg class="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+                        <svg class="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+                    </button>
                 </div>
-            </nav>
+            </div>
         </header>
 
         <main>
-            <div class="hero">
+            <section class="hero">
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="col-lg-6 hero-left">
-                            <div class="d-flex align-items-center justify-content-center">
-                                <span class="navbar-brand navbar-brand-center d-flex align-items-center justify-content-center">
-                                    <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte" width="289" height="236" style="height: auto;">
-                                </span>
+                            <span class="hero-eyebrow" id="heroEyebrow">Skihütte am Kronplatz · 1.800 m</span>
+                            <h1 class="hero-title">
+                                <span id="heroWelcome">Hoila</span>
+                                <span class="hero-title-sub">Benvenuti · Welcome</span>
+                            </h1>
+                            <p class="hero-lead" id="heroLead">
+                                Unter dem Motto „ANFOCH &amp; GUIT“ verwöhnen wir euch auf der Olanger Seite des Kronplatzes mit regionaler Südtiroler Küche und Produkten vom eigenen Hof.
+                            </p>
+                            <div class="hero-badges">
+                                <span class="info-chip"><i class="far fa-clock" aria-hidden="true"></i><span id="heroHoursBadge">Täglich 09:00 – 16:00 Uhr</span></span>
+                                <span class="info-chip"><i class="fas fa-mountain" aria-hidden="true"></i><span id="heroLocationBadge">Olanger Seite · Kronplatz</span></span>
                             </div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <h1 class="display-4 mb-5 section-padding text-left">
-                                    <a href="#welcome">Hoila</a><br>Benvenuti<br>Welcome
-                                </h1>
+                            <div class="hero-actions">
+                                <a href="#kitchen" class="btn btn-primary btn-shadow" id="heroCtaKitchen">Unsere Küche</a>
+                                <a href="#pistenplan" class="btn btn-outline-brand" id="heroCtaMap">Pistenplan &amp; Lage</a>
                             </div>
                         </div>
                         <div class="col-lg-6 hero-right only-desktop">
-                            <div class="owl-carousel owl-theme hero-carousel rounded">
-                                <div class="item">
-                                    <picture><source type="image/avif" srcset="img/hitte_sunrise-640w.avif 480w, img/hitte_sunrise.avif 1200w" sizes="(max-width: 992px) 100vw, 50vw"><img src="img/hitte_sunrise.jpg" class="img-fluid rounded" alt="Huiba Hitte bei Sonnenaufgang am Kronplatz" width="1549" height="2065" fetchpriority="high"></picture>
-                                </div>
+                            <div class="hero-media-card">
+                                <picture><source type="image/avif" srcset="img/hitte_sunrise-640w.avif 480w, img/hitte_sunrise.avif 1200w" sizes="(max-width: 992px) 100vw, 50vw"><img src="img/hitte_sunrise.jpg" alt="Huiba Hitte bei Sonnenaufgang am Kronplatz" width="1549" height="2065" fetchpriority="high"></picture>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Welcome Section -->
             <section id="welcome" class="bg-white section-padding">
                 <div class="container">
                     <div class="section-content">
                         <div class="row">
-                            <div class="col-sm-12 col-md-6 col-lg-5 img-bg welcome-bg-family d-flex shadow align-items-center justify-content-center justify-content-md-end img-2 rounded" role="img" aria-label="Familie Pörnbacher vor der Huiba Hitte">
+                            <div class="col-sm-12 col-md-6 col-lg-5 mb-4 mb-lg-0">
+                                <div class="img-bg welcome-bg-family h-100" role="img" aria-label="Familie Pörnbacher vor der Huiba Hitte"></div>
                             </div>
 
-                            <div class="col-sm-12 col-md-6 only-mobile img-bg welcome-bg-sunrise d-flex shadow align-items-center justify-content-center justify-content-md-end img-2 rounded" role="img" aria-label="Huiba Hitte bei Sonnenaufgang">
+                            <div class="col-sm-12 col-md-6 only-mobile mb-4 mb-lg-0">
+                                <div class="img-bg welcome-bg-sunrise" role="img" aria-label="Huiba Hitte bei Sonnenaufgang"></div>
                             </div>
 
                             <div class="col-sm-12 col-lg-7 pl-md-0 pl-lg-4 padding-top">
@@ -210,8 +184,8 @@
                                 </div>
                                 <div class="pl-lg-5 ml-md-0">
                                     <p id="welcomeText">Wir, das Huiba Hittn Team, möchten euch herzlich auf unserer Hütte begrüßen. Unter dem Motto „ANFOCH &amp; GUIT“ verarbeiten wir regionale Produkte mit kurzen Transportwegen zu leckeren Speisen. Einige Lebensmittel stammen direkt von unserem Hof, dem Huiba Hof in Mitterolang.</p>
-                                    <h3 class="mt-5" id="farmProductsTitle">Hofeigene Produkte</h3>
-                                    <div class="row">
+                                    <h3 class="mt-4 mt-md-5" id="farmProductsTitle">Hofeigene Produkte</h3>
+                                    <div class="row farm-products-row">
                                         <div class="col-4">
                                             <div class="thumb-menu">
                                                 <picture><source type="image/avif" srcset="img/steak.avif"><img src="img/steak.jpg" class="img-fluid img-cover shadow rounded" alt="Rindfleisch vom eigenen Hof" width="640" height="427" loading="lazy" decoding="async"></picture>
@@ -301,38 +275,38 @@
                         </div>
 
                         <!-- Gallery Preview Grid -->
-                        <div class="row mt-5">
-                            <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="row mt-4 mt-md-5">
+                            <div class="col-6 col-md-6 col-lg-3 mb-3 mb-lg-4">
                                 <div class="gallery-preview-item">
                                     <div class="thumb-menu">
-                                        <picture><source type="image/avif" srcset="img/gallery/family-work-640w.avif 480w, img/gallery/family-work.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/family-work.jpg" class="img-fluid img-cover shadow rounded" alt="Familienbetrieb" width="1536" height="2048" loading="lazy" decoding="async"></picture>
+                                        <picture><source type="image/avif" srcset="img/gallery/family-work-640w.avif 480w, img/gallery/family-work.avif 1200w" sizes="(max-width: 768px) 50vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/family-work.jpg" class="img-fluid img-cover shadow rounded" alt="Familienbetrieb" width="1536" height="2048" loading="lazy" decoding="async"></picture>
                                         <h6 id="galleryFamily">Familienbetrieb</h6>
                                         <p class="small text-muted" id="galleryFamilyDesc">Traditionelle Landwirtschaft</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="col-6 col-md-6 col-lg-3 mb-3 mb-lg-4">
                                 <div class="gallery-preview-item">
                                     <div class="thumb-menu">
-                                        <picture><source type="image/avif" srcset="img/gallery/kuh-weide-640w.avif 480w, img/gallery/kuh-weide.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/kuh-weide.jpg" class="img-fluid img-cover shadow rounded" alt="Unsere Kühe auf der Weide" width="2295" height="3060" loading="lazy" decoding="async"></picture>
+                                        <picture><source type="image/avif" srcset="img/gallery/kuh-weide-640w.avif 480w, img/gallery/kuh-weide.avif 1200w" sizes="(max-width: 768px) 50vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/kuh-weide.jpg" class="img-fluid img-cover shadow rounded" alt="Unsere Kühe auf der Weide" width="2295" height="3060" loading="lazy" decoding="async"></picture>
                                         <h6 id="galleryCows">Unsere Kühe</h6>
                                         <p class="small text-muted" id="galleryCowsDesc">Sommerweidung auf der Alm</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="col-6 col-md-6 col-lg-3 mb-3 mb-lg-4">
                                 <div class="gallery-preview-item">
                                     <div class="thumb-menu">
-                                        <picture><source type="image/avif" srcset="img/gallery/kartoffeln-640w.avif 480w, img/gallery/kartoffeln.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/kartoffeln.jpg" class="img-fluid img-cover shadow rounded" alt="Regionale Produkte vom Hof" width="2008" height="2678" loading="lazy" decoding="async"></picture>
+                                        <picture><source type="image/avif" srcset="img/gallery/kartoffeln-640w.avif 480w, img/gallery/kartoffeln.avif 1200w" sizes="(max-width: 768px) 50vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/kartoffeln.jpg" class="img-fluid img-cover shadow rounded" alt="Regionale Produkte vom Hof" width="2008" height="2678" loading="lazy" decoding="async"></picture>
                                         <h6 id="galleryProducts">Regionale Produkte</h6>
                                         <p class="small text-muted" id="galleryProductsDesc">Direkt vom Hof</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="col-6 col-md-6 col-lg-3 mb-3 mb-lg-4">
                                 <div class="gallery-preview-item">
                                     <div class="thumb-menu">
-                                        <picture><source type="image/avif" srcset="img/gallery/sonnenaufgang-640w.avif 640w, img/gallery/sonnenaufgang.avif 1600w" sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/sonnenaufgang.jpg" class="img-fluid img-cover shadow rounded" alt="Sonnenaufgang auf der Hütte" width="4032" height="3024" loading="lazy" decoding="async"></picture>
+                                        <picture><source type="image/avif" srcset="img/gallery/sonnenaufgang-640w.avif 640w, img/gallery/sonnenaufgang.avif 1600w" sizes="(max-width: 768px) 50vw, (max-width: 992px) 50vw, 260px"><img src="img/gallery/sonnenaufgang.jpg" class="img-fluid img-cover shadow rounded" alt="Sonnenaufgang auf der Hütte" width="4032" height="3024" loading="lazy" decoding="async"></picture>
                                         <h6 id="galleryHutLife">Die Hütte</h6>
                                         <p class="small text-muted" id="galleryHutLifeDesc">70 Jahre Familienbesitz</p>
                                     </div>
@@ -366,8 +340,8 @@
                                 Unser "Albl"
                             </h2>
                         </div>
-                        <div class="row mt-5">
-                            <div class="col-lg-5 col-md-6 align-self-center py-5">
+                        <div class="row mt-4 mt-md-5">
+                            <div class="col-lg-5 col-md-6 align-self-center py-2 py-md-5">
                                 <h3 class="story-title"><span id="story1Title1">Skihütte im</span><br><span id="story1Title2">Winter</span></h3>
                                 <div class="story-text">
                                     <p class="pt-3" id="story1Text">Die „Huiba Hitte“ befindet sich auf 1800m, auf der Olanger Seite des Kronplatzes, sechs Hektar Wiese gehören dazu. Seit 70 Jahren ist sie im Besitz der Familie Pörnbacher - Huber aus Olang. In den ersten 50 Jahren wurde das damals sogenannte „Ruipa Albl“ verpachtet und im Jahre 1998 unter dem Namen „Huber Alm“ neu aufgebaut.</p>
@@ -377,11 +351,11 @@
                                 <picture><source type="image/avif" srcset="img/hitte_old-640w.avif 640w, img/hitte_old.avif 1100w" sizes="(max-width: 768px) 100vw, 480px"><img src="img/hitte_old.jpg" class="img-fluid shadow rounded w-100" alt="Historische Aufnahme des Ruipa Albl" width="1101" height="723" style="height: auto;" loading="lazy" decoding="async"></picture>
                             </div>
                         </div>
-                        <div class="row mt-5">
+                        <div class="row mt-4 mt-md-5">
                             <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
                                 <picture><source type="image/avif" srcset="img/hitte-sommer-640w.avif 608w, img/hitte-sommer.avif 1200w" sizes="(max-width: 768px) 100vw, 480px"><img src="img/hitte-sommer.jpg" class="img-fluid shadow rounded w-100" alt="Die Huiba Hitte im Sommer" width="1201" height="1266" style="height: auto;" loading="lazy" decoding="async"></picture>
                             </div>
-                            <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
+                            <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-2 py-md-5">
                                 <h3 class="story-title"><span id="story2Title1">Weide im</span><br><span id="story2Title2">Sommer</span></h3>
                                 <div class="story-text">
                                     <p class="pt-3" id="story2Text">Einige unserer Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten. Im Winter wurde die Alm verpachtet und als Skihütte genutzt. 2022 haben wir die Hütte als Familie selbst übernommen und führen sie unter unserem Hofnamen „Huiba“.</p>
@@ -415,15 +389,36 @@
             <!-- End Story Section -->
 
             <!-- Pistenplan Section -->
-            <section id="pistenplan" aria-label="Pistenplan Kronplatz">
-                <div class="w-100">
-                    <picture><source type="image/avif" srcset="img/pistenplan_fade-640w.avif 640w, img/pistenplan_fade.avif 1600w" sizes="100vw"><img src="img/pistenplan_fade.jpg" class="w-100" alt="Pistenplan Kronplatz mit Lage der Huiba Hitte" width="1643" height="1109" style="height: auto;" loading="lazy" decoding="async"></picture>
+            <section id="pistenplan" class="section-padding" aria-label="Pistenplan Kronplatz">
+                <div class="container">
+                    <div class="heading-section text-center">
+                        <span class="subheading" id="locationSubheading">So findet ihr uns</span>
+                        <h2 class="heading" id="locationTitle">Direkt an der Alpen-Piste</h2>
+                        <p id="locationText">Auf 1.800 Metern Höhe auf der Olanger Seite des Kronplatzes gelegen, ist unsere Hütte der ideale Einkehrschwung für euren Skitag – mit sonniger Terrasse und herrlichem Panoramablick.</p>
+                    </div>
+
+                    <div class="location-highlights">
+                        <span class="info-chip"><i class="fas fa-mountain" aria-hidden="true"></i><span id="locationBadge1">1.800 m Seehöhe</span></span>
+                        <span class="info-chip"><i class="fas fa-sun" aria-hidden="true"></i><span id="locationBadge2">Sonnenterrasse &amp; Stuben</span></span>
+                        <span class="info-chip"><i class="fas fa-tractor" aria-hidden="true"></i><span id="locationBadge3">Produkte vom Huiba Hof</span></span>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="pistenplan-frame">
+                            <picture><source type="image/avif" srcset="img/pistenplan_fade-640w.avif 640w, img/pistenplan_fade.avif 1600w" sizes="100vw"><img src="img/pistenplan_fade.jpg" class="w-100" alt="Pistenplan Kronplatz mit Lage der Huiba Hitte" width="1643" height="1109" loading="lazy" decoding="async"></picture>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="https://maps.google.com/?q=Huiba+Hitte+Prackenweg+32+Olang" target="_blank" rel="noopener noreferrer" class="btn btn-outline-brand">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i><span id="locationMapsCta">In Google Maps öffnen</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
 
         <!-- FOOTER -->
-        <footer class="mastfoot pb-5 section-padding pb-0">
+        <footer id="contact" class="mastfoot pb-5 section-padding pb-0">
             <div class="inner container">
                 <div class="row">
                     <div class="col-12 col-lg-4 text-center text-lg-left">
@@ -436,12 +431,12 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-5 text-center text-lg-left pt-5 pt-lg-0">
-                        <div class="footer-widget px-lg-5 px-0">
+                    <div class="col-12 col-lg-5 text-center text-lg-left pt-4 pt-lg-0">
+                        <div class="footer-widget open-hours-card">
                             <h4 id="footerHours">Öffnungszeiten</h4>
                             <p><strong id="footerSeason">Saison von 28.11.2026 bis 29.03.2027</strong></p>
                             <div class="open-hours-wrap">
-                                <ul class="list-unstyled open-hours">
+                                <ul class="list-unstyled open-hours mb-0">
                                     <li class="d-flex justify-content-between"><span id="dayMon">Montag</span><span>9:00 - 16:00 <span id="timeLabel">Uhr</span></span></li>
                                     <li class="d-flex justify-content-between"><span id="dayTue">Dienstag</span><span>9:00 - 16:00 <span id="timeLabel2">Uhr</span></span></li>
                                     <li class="d-flex justify-content-between"><span id="dayWed">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabel3">Uhr</span></span></li>
@@ -454,13 +449,13 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-3 text-center text-lg-right pt-5 pt-lg-0">
+                    <div class="col-12 col-lg-3 text-center text-lg-right pt-4 pt-lg-0">
                         <div class="footer-widget">
-                            <nav class="nav nav-mastfoot justify-content-center justify-content-lg-end" aria-label="Social Media">
-                                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://facebook.com/huibahitte" aria-label="Huiba Hitte auf Facebook">
+                            <nav class="nav nav-mastfoot justify-content-center justify-content-lg-end" style="gap: 0.65rem;" aria-label="Social Media">
+                                <a class="social-pill" target="_blank" rel="noopener noreferrer" href="https://facebook.com/huibahitte" aria-label="Huiba Hitte auf Facebook">
                                     <i class="fab icon-size-2 fa-facebook-f" aria-hidden="true"></i>
                                 </a>
-                                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://instagram.com/huiba_hitte" aria-label="Huiba Hitte auf Instagram">
+                                <a class="social-pill" target="_blank" rel="noopener noreferrer" href="https://instagram.com/huiba_hitte" aria-label="Huiba Hitte auf Instagram">
                                     <i class="fab icon-size-2 fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </nav>
@@ -494,7 +489,13 @@
     <script>
         const translations = {
             de: {
+                heroEyebrow: 'Skihütte am Kronplatz · 1.800 m',
                 heroWelcome: 'Hoila',
+                heroLead: 'Unter dem Motto „ANFOCH & GUIT“ verwöhnen wir euch auf der Olanger Seite des Kronplatzes mit regionaler Südtiroler Küche und Produkten vom eigenen Hof.',
+                heroHoursBadge: 'Täglich 09:00 – 16:00 Uhr',
+                heroLocationBadge: 'Olanger Seite · Kronplatz',
+                heroCtaKitchen: 'Unsere Küche',
+                heroCtaMap: 'Pistenplan & Lage',
                 welcomeSubheading: 'Schön, dass ihr hier seid',
                 welcomeTitle: 'Mochts enk fein',
                 welcomeText: 'Wir, das Huiba Hittn Team, möchten euch herzlich auf unserer Hütte begrüßen. Unter dem Motto „ANFOCH & GUIT" verarbeiten wir regionale Produkte mit kurzen Transportwegen zu leckeren Speisen. Einige Lebensmittel stammen direkt von unserem Hof, dem Huiba Hof in Mitterolang.',
@@ -532,6 +533,15 @@
                 navKitchen: 'Küche',
                 navStory: 'Geschichte',
                 navGallery: 'Galerie',
+                navLocation: 'Lage',
+                navContact: 'Kontakt',
+                locationSubheading: 'So findet ihr uns',
+                locationTitle: 'Direkt an der Alpen-Piste',
+                locationText: 'Auf 1.800 Metern Höhe auf der Olanger Seite des Kronplatzes gelegen, ist unsere Hütte der ideale Einkehrschwung für euren Skitag – mit sonniger Terrasse und herrlichem Panoramablick.',
+                locationBadge1: '1.800 m Seehöhe',
+                locationBadge2: 'Sonnenterrasse & Stuben',
+                locationBadge3: 'Produkte vom Huiba Hof',
+                locationMapsCta: 'In Google Maps öffnen',
                 footerLocation: 'Südtirol Italien',
                 footerPhone: 'Telefon',
                 footerMobile: 'Privat',
@@ -545,7 +555,13 @@
                 dayFri: 'Freitag', daySat: 'Samstag', daySun: 'Sonntag'
             },
             it: {
+                heroEyebrow: 'Rifugio al Plan de Corones · 1.800 m',
                 heroWelcome: 'Benvenuti',
+                heroLead: 'Con il motto „SEMPLICE E BUONO“ vi accogliamo sul lato di Valdaora del Plan de Corones con cucina tipica altoatesina e prodotti del nostro maso.',
+                heroHoursBadge: 'Tutti i giorni 09:00 – 16:00',
+                heroLocationBadge: 'Lato Valdaora · Plan de Corones',
+                heroCtaKitchen: 'La nostra cucina',
+                heroCtaMap: 'Mappa piste & posizione',
                 welcomeSubheading: 'È un piacere avervi qui. Buon appetito!',
                 welcomeTitle: 'Mettetevi comodi',
                 welcomeText: 'La squadra della Huiba Hitte vi dà il benvenuto nel suo rifugio. Con il motto „SEMPLICE E BUONO" trasformiamo prodotti regionali a km zero in squisite pietanze. Alcuni alimenti derivano direttamente dal nostro maso, l’Huiba Hof di Valdaora di mezzo.',
@@ -583,6 +599,15 @@
                 navKitchen: 'Cucina',
                 navStory: 'Storia',
                 navGallery: 'Galleria',
+                navLocation: 'Posizione',
+                navContact: 'Contatti',
+                locationSubheading: 'Come raggiungerci',
+                locationTitle: 'Direttamente sulla pista Alpen',
+                locationText: 'Situato a 1.800 metri di altitudine sul lato di Valdaora del Plan de Corones, il nostro rifugio è la sosta ideale durante la vostra giornata sugli sci, con terrazza soleggiata e vista panoramica.',
+                locationBadge1: '1.800 m di altitudine',
+                locationBadge2: 'Terrazza soleggiata & stube',
+                locationBadge3: 'Prodotti dell\'Huiba Hof',
+                locationMapsCta: 'Apri in Google Maps',
                 footerLocation: 'Alto Adige Italia',
                 footerPhone: 'Telefono',
                 footerMobile: 'Privato',
@@ -596,7 +621,13 @@
                 dayFri: 'Venerdì', daySat: 'Sabato', daySun: 'Domenica'
             },
             en: {
+                heroEyebrow: 'Ski Hut at Kronplatz · 1,800 m',
                 heroWelcome: 'Welcome',
+                heroLead: 'Under the motto “SIMPLE & GOOD”, we welcome you on the Olang side of Kronplatz with regional South Tyrolean cuisine and ingredients from our own farm.',
+                heroHoursBadge: 'Daily 09:00 – 16:00',
+                heroLocationBadge: 'Olang Side · Kronplatz',
+                heroCtaKitchen: 'Our cuisine',
+                heroCtaMap: 'Slope map & location',
                 welcomeSubheading: 'Nice to have you here. Feel at home. Enjoy',
                 welcomeTitle: 'Make yourselves comfortable',
                 welcomeText: 'We, the team, welcome you wholeheartedly to the Huiba Hitte. To ensure the best culinary experience we use regional products with short transport routes and some goods we produce at our home farm, the Huiba Hof in Mitterolang.',
@@ -634,6 +665,15 @@
                 navKitchen: 'Kitchen',
                 navStory: 'History',
                 navGallery: 'Gallery',
+                navLocation: 'Location',
+                navContact: 'Contact',
+                locationSubheading: 'How to find us',
+                locationTitle: 'Right on the Alpen slope',
+                locationText: 'Located at 1,800 meters above sea level on the Olang side of Kronplatz, our hut is the ideal stop during your ski day – with a sunny terrace and panoramic mountain views.',
+                locationBadge1: '1,800 m altitude',
+                locationBadge2: 'Sun terrace & dining rooms',
+                locationBadge3: 'Products from Huiba Hof',
+                locationMapsCta: 'Open in Google Maps',
                 footerLocation: 'South Tyrol Italy',
                 footerPhone: 'Phone',
                 footerMobile: 'Mobile',
@@ -701,6 +741,28 @@
                 else lang = 'en';
             }
             updateContent(lang);
+
+            const header = document.getElementById('navbar-header');
+            const menuToggle = document.getElementById('menuToggle');
+            if (header && menuToggle) {
+                const closeMenu = () => {
+                    header.classList.remove('is-menu-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                };
+                menuToggle.addEventListener('click', function () {
+                    const isOpen = header.classList.toggle('is-menu-open');
+                    menuToggle.setAttribute('aria-expanded', String(isOpen));
+                });
+                header.querySelectorAll('.site-nav .nav-link').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') closeMenu();
+                });
+                document.addEventListener('click', function (e) {
+                    if (!header.contains(e.target)) closeMenu();
+                });
+            }
         });
     </script>
 </body>
