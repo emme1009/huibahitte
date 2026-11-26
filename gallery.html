@@ -2,20 +2,20 @@
 <html lang="de">
 
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Galerie - Huiba Hitte</title>
     <meta name="description" content="Galerie unserer hausgemachten Produkte und Gerichte. Huiba Hitte, Skihütte am Kronplatz.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="canonical" href="https://huibahitte.com/gallery.html">
+
+    <meta property="og:type" content="website">
     <meta property="og:image" content="https://huibahitte.com/img/hitte_sunrise.jpg">
     <meta property="og:title" content="Galerie - Huiba Hitte">
-    <meta property="og:description" content="Unsere hausgemachten Produkte und Gerichte aus regionalen Zutaten." />
-    <meta property="og:url" content="https://huibahitte.com/galerie.html">
+    <meta property="og:description" content="Unsere hausgemachten Produkte und Gerichte aus regionalen Zutaten.">
+    <meta property="og:url" content="https://huibahitte.com/gallery.html">
 
-
-    <!--Favicon-->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -26,17 +26,12 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/select2/select2.min.css">
-    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.13/featherlight.min.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- CSS -->
@@ -50,413 +45,309 @@
             gap: 20px;
             padding: 20px 0;
         }
-        
+
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 gap: 15px;
             }
         }
-        
+
         .gallery-item {
             position: relative;
             overflow: hidden;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            display: block;
         }
-        
+
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 250px;
             object-fit: cover;
             display: block;
-            transition: opacity 0.3s ease;
         }
-        
-        /* Image optimization for faster loading */
-        .gallery-item img[loading="lazy"] {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item img[loading="lazy"].loaded {
-            opacity: 1;
-        }
-        
+
         @media (max-width: 768px) {
             .gallery-item img {
                 height: 180px;
             }
         }
-        
-        .gallery-item-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 15px 10px 10px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
+
         .gallery-category {
             margin-bottom: 50px;
         }
-        
-        .gallery-category h3 {
+
+        .gallery-category-heading {
             font-family: var(--font-heading);
             font-size: clamp(1.45rem, 1.2rem + 0.8vw, 1.85rem);
             margin-bottom: 25px;
             color: var(--color-heading);
             border-bottom: 1px solid rgba(212, 165, 116, 0.55);
             padding-bottom: 12px;
+            text-wrap: wrap;
         }
     </style>
-
-    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-
 </head>
-<body data-spy="scroll" data-target="#navbar" class="static-layout">
-	
-    <div id="canvas-overlay"></div>
-	
-    <div class="boxed-page">
-		
-    <nav id="navbar-header" class="navbar navbar-expand">
-        <div class="container">        
-            <div class="justify-content-between" id="navbarSupportedContent">
-                <ul class="navbar-nav d-flex justify-content-between">
-                    <div class="d-flex flex-lg-row flex-sm-row">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="setLanguage('de'); return false;">DE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="setLanguage('it'); return false;">IT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="setLanguage('en'); return false;">EN</a>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>		
 
-    <!-- Gallery Section -->
-    <section class="bg-white">
-        <div class="container">
-            <!-- Logo and Title -->
-            <div class="text-center mb-5">
-                <a class="navbar-brand d-flex align-items-center justify-content-center mb-3" href="index.html">
-                    <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte Logo" style="max-height: 150px;">
-                </a>
-                <h1 class="display-4 mb-4" id="galleryTitle">Unsere Familienbetrieb Galerie</h1>
-                <div class="row">
-                    <div class="col-lg-10 mx-auto">
-                        <p class="lead mb-2" id="galleryDescription1">Seit 70 Jahren ist die Huiba Hitte im Besitz der Familie Pörnbacher aus Olang. Was als "Ruipa Albl" begann, ist heute ein authentischer Familienbetrieb, der Tradition und regionale Qualität vereint.</p>
-                        <p class="mb-2" id="galleryDescription2">Unsere Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten des Kronplatzes auf 1800m Höhe. Das Fleisch und die Kartoffeln, die wir in unserer Hütte servieren, stammen direkt von unserem Huiba Hof in Mitterolang - echter "Hof zu Tisch" Genuss.</p>
-                        <p class="text-muted" id="galleryDescription3">Unter dem Motto "ANFOCH & GUIT" kreieren wir aus hochwertigen, regionalen Produkten mit kurzen Transportwegen authentische Südtiroler Spezialitäten. Jedes Gericht erzählt die Geschichte unserer Familie und unserer Heimat.</p>
+<body class="static-layout">
+    <div class="boxed-page">
+        <header>
+            <nav id="navbar-header" class="navbar navbar-expand" aria-label="Sprachauswahl">
+                <div class="container">
+                    <div class="justify-content-between" id="navbarSupportedContent">
+                        <ul class="navbar-nav d-flex flex-row">
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-lang="de">DE</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-lang="it">IT</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-lang="en">EN</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Familienbetrieb / Family Business Category -->
+            </nav>
+        </header>
+
+        <main>
+            <!-- Gallery Section -->
+            <section class="bg-white">
+                <div class="container">
+                    <!-- Logo and Title -->
+                    <div class="text-center mb-5">
+                        <a class="navbar-brand d-flex align-items-center justify-content-center mb-3" href="index.html">
+                            <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte Logo" width="289" height="236" style="max-height: 150px; width: auto; height: auto;">
+                        </a>
+                        <h1 class="display-4 mb-4" id="galleryTitle">Unsere Familienbetrieb Galerie</h1>
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto">
+                                <p class="lead mb-2" id="galleryDescription1">Seit 70 Jahren ist die Huiba Hitte im Besitz der Familie Pörnbacher aus Olang. Was als "Ruipa Albl" begann, ist heute ein authentischer Familienbetrieb, der Tradition und regionale Qualität vereint.</p>
+                                <p class="mb-2" id="galleryDescription2">Unsere Kühe und Jungrinder weiden über die Sommermonate auf den Skipisten des Kronplatzes auf 1800m Höhe. Das Fleisch und die Kartoffeln, die wir in unserer Hütte servieren, stammen direkt von unserem Huiba Hof in Mitterolang - echter "Hof zu Tisch" Genuss.</p>
+                                <p class="text-muted" id="galleryDescription3">Unter dem Motto "ANFOCH &amp; GUIT" kreieren wir aus hochwertigen, regionalen Produkten mit kurzen Transportwegen authentische Südtiroler Spezialitäten. Jedes Gericht erzählt die Geschichte unserer Familie und unserer Heimat.</p>
+                            </div>
+                        </div>
+                    </div>
+
             <div class="gallery-category">
-                <h3 id="familyBusinessTitle">Unser Familienbetrieb</h3>
+                <h2 class="gallery-category-heading" id="familyBusinessTitle">Unser Familienbetrieb</h2>
                 <div class="gallery-grid">
                     <a href="img/gallery/family-work.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/family-work.jpg" alt="Familie bei der Arbeit" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/family-work-640w.avif 480w, img/gallery/family-work.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/family-work.jpg" alt="Familie bei der Arbeit" width="1536" height="2048" fetchpriority="high"></picture>
                     </a>
                     <a href="img/gallery/family.jpeg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/family.jpeg" alt="Familie Huber" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/family-640w.avif 480w, img/gallery/family.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/family.jpeg" alt="Familie Huber" width="1536" height="2048"></picture>
                     </a>
                     <a href="img/gallery/family-2.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/family-2.jpg" alt="Familientradition" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/family-2-640w.avif 480w, img/gallery/family-2.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/family-2.jpg" alt="Familientradition" width="2522" height="3363"></picture>
                     </a>
                     <a href="img/gallery/hof.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/hof.jpg" alt="Huiba Hof" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/hof-640w.avif 640w, img/gallery/hof.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/hof.jpg" alt="Huiba Hof" width="2728" height="1758"></picture>
                     </a>
                     <a href="img/family.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/family.jpg" alt="Familie Porträt" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/family-640w.avif 512w, img/family.avif 1280w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/family.jpg" alt="Familie Porträt" width="1280" height="1597" loading="lazy" decoding="async"></picture>
                     </a>
-
-                    
                     <a href="img/gallery/kuh-2.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-2.jpg" alt="Urtal" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-2-640w.avif 640w, img/gallery/kuh-2.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-2.jpg" alt="Urtal" width="2621" height="1966" loading="lazy" decoding="async"></picture>
                     </a>
-                    
                     <a href="img/gallery/stier.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/stier.jpg" alt="Stier" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/stier-640w.avif 640w, img/gallery/stier.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/stier.jpg" alt="Stier" width="2641" height="1761" loading="lazy" decoding="async"></picture>
                     </a>
                 </div>
             </div>
-
-            <!-- Kühe und Viehzucht / Cows and Cattle Category -->
             <div class="gallery-category">
-                <h3 id="cowsTitle">Unsere Kühe und Viehzucht</h3>
+                <h2 class="gallery-category-heading" id="cowsTitle">Unsere Kühe und Viehzucht</h2>
                 <div class="gallery-grid">
                     <a href="img/gallery/kuh-weide.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-weide.jpg" alt="Kühe auf der Weide" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-weide-640w.avif 480w, img/gallery/kuh-weide.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-weide.jpg" alt="Kühe auf der Weide" width="2295" height="3060" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kuh-alm.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-alm.jpg" alt="Kühe auf der Alm" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-alm-640w.avif 640w, img/gallery/kuh-alm.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-alm.jpg" alt="Kühe auf der Alm" width="2254" height="1690" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kuh.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh.jpg" alt="Unsere Kuh" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-640w.avif 480w, img/gallery/kuh.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh.jpg" alt="Unsere Kuh" width="2482" height="3309" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kalb.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kalb.jpg" alt="Kalb" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kalb-640w.avif 480w, img/gallery/kalb.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kalb.jpg" alt="Kalb" width="2948" height="3931" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kuh-weide-2.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-weide-2.jpg" alt="Vieh auf der Weide" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-weide-2-640w.avif 640w, img/gallery/kuh-weide-2.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-weide-2.jpg" alt="Vieh auf der Weide" width="2435" height="1826" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kuh-stall.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-stall.jpg" alt="Im Stall" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-stall-640w.avif 640w, img/gallery/kuh-stall.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-stall.jpg" alt="Im Stall" width="2338" height="1754" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kuh-winter.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-winter.jpg" alt="Kühe im Winter" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-winter-640w.avif 480w, img/gallery/kuh-winter.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-winter.jpg" alt="Kühe im Winter" width="2224" height="2966" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/heuernte.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/heuernte.jpg" alt="Heuernte" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/heuernte-640w.avif 640w, img/gallery/heuernte.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/heuernte.jpg" alt="Heuernte" width="2364" height="1773" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/hitte-sommer.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/hitte-sommer.jpg" alt="Sommer" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/hitte-sommer-640w.avif 608w, img/hitte-sommer.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/hitte-sommer.jpg" alt="Sommer" width="1201" height="1266" loading="lazy" decoding="async"></picture>
                     </a>
                 </div>
             </div>
-
-            <!-- Regionale Produkte / Regional Products Category -->
             <div class="gallery-category">
-                <h3 id="regionalProductsTitle">100% Regionale Produkte</h3>
+                <h2 class="gallery-category-heading" id="regionalProductsTitle">100% Regionale Produkte</h2>
                 <div class="gallery-grid">
                     <a href="img/steak.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/steak.jpg" alt="Rindfleisch vom Hof" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/steak.avif"><img src="img/steak.jpg" alt="Rindfleisch vom Hof" width="640" height="427" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/kartoffel.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/kartoffel.jpg" alt="Kartoffeln" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/kartoffel-640w.avif 640w, img/kartoffel.avif 1146w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/kartoffel.jpg" alt="Kartoffeln" width="1146" height="863" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kartoffeln.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kartoffeln.jpg" alt="Frische Kartoffeln" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kartoffeln-640w.avif 480w, img/gallery/kartoffeln.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kartoffeln.jpg" alt="Frische Kartoffeln" width="2008" height="2678" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kartoffeln-2.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kartoffeln-2.jpg" alt="Kartoffeln" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kartoffeln-2-640w.avif 640w, img/gallery/kartoffeln-2.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kartoffeln-2.jpg" alt="Kartoffeln" width="2076" height="1557" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/gemüse.JPG" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/gemüse.JPG" alt="Frisches Gemüse" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/gemüse-640w.avif 480w, img/gallery/gemüse.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/gemüse.JPG" alt="Frisches Gemüse" width="1442" height="1923" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/salad.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/salad.jpg" alt="Frischer Salat" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/salad-640w.avif 640w, img/gallery/salad.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/salad.jpg" alt="Frischer Salat" width="2124" height="1416" loading="lazy" decoding="async"></picture>
                     </a>
                 </div>
             </div>
-
-            <!-- Hausgemachte Gerichte / Homemade Dishes Category -->
             <div class="gallery-category">
-                <h3 id="homemadeDishesTitle">Hausgemachte Gerichte</h3>
+                <h2 class="gallery-category-heading" id="homemadeDishesTitle">Hausgemachte Gerichte</h2>
                 <div class="gallery-grid">
                     <a href="img/speckbrettl.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/speckbrettl.jpg" alt="Speckbrettl" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/speckbrettl-640w.avif 640w, img/speckbrettl.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/speckbrettl.jpg" alt="Speckbrettl" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/wedges.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/wedges.jpg" alt="Kartoffel Wedges" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/wedges-640w.avif 640w, img/wedges.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/wedges.jpg" alt="Kartoffel Wedges" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/schmorrn.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/schmorrn.jpg" alt="Kaiserschmarrn" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/schmorrn-640w.avif 640w, img/schmorrn.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/schmorrn.jpg" alt="Kaiserschmarrn" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/kneidl.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/kneidl.jpg" alt="Knödel" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/kneidl-640w.avif 640w, img/kneidl.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/kneidl.jpg" alt="Knödel" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/teigtaschn.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/teigtaschn.jpg" alt="Teigtaschen" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/teigtaschn-640w.avif 640w, img/teigtaschn.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/teigtaschn.jpg" alt="Teigtaschen" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/nudlpfandl.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/nudlpfandl.jpg" alt="Nudlpfandl" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/nudlpfandl-640w.avif 640w, img/nudlpfandl.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/nudlpfandl.jpg" alt="Nudlpfandl" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                 </div>
             </div>
-
-            <!-- Die Hütte / The Hut Category -->
             <div class="gallery-category">
-                <h3 id="hutLifeTitle">Leben auf der Hütte</h3>
+                <h2 class="gallery-category-heading" id="hutLifeTitle">Leben auf der Hütte</h2>
                 <div class="gallery-grid">
                     <a href="img/hitte_sunrise.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/hitte_sunrise.jpg" alt="Sonnenaufgang" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/hitte_sunrise-640w.avif 480w, img/hitte_sunrise.avif 1200w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/hitte_sunrise.jpg" alt="Sonnenaufgang" width="1549" height="2065" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/hitte_old.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/hitte_old.jpg" alt="Alte Hütte" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/hitte_old-640w.avif 640w, img/hitte_old.avif 1100w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/hitte_old.jpg" alt="Alte Hütte" width="1101" height="723" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/sonnenaufgang-2.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/sonnenaufgang-2.jpg" alt="Morgenstimmung" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/sonnenaufgang-2-640w.avif 640w, img/gallery/sonnenaufgang-2.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/sonnenaufgang-2.jpg" alt="Morgenstimmung" width="4032" height="3024" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/hitte.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/hitte.jpg" alt="Huiba Hitte" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/hitte-640w.avif 640w, img/hitte.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/hitte.jpg" alt="Huiba Hitte" width="1919" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/gallery/kuh-alm.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/gallery/kuh-alm.jpg" alt="Kuh Alm" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/gallery/kuh-alm-640w.avif 640w, img/gallery/kuh-alm.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/gallery/kuh-alm.jpg" alt="Kuh Alm" width="2254" height="1690" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/hitte_innen.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/hitte_innen.jpg" alt="Innenraum" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/hitte_innen-640w.avif 640w, img/hitte_innen.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/hitte_innen.jpg" alt="Innenraum" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/stube.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/stube.jpg" alt="Stube" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/stube-640w.avif 640w, img/stube.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/stube.jpg" alt="Stube" width="1920" height="1280" loading="lazy" decoding="async"></picture>
                     </a>
                     <a href="img/hitte_voll.jpg" class="gallery-item" data-featherlight="image">
-                        <img src="img/hitte_voll.jpg" alt="Volle Hütte" loading="lazy">
+                        <picture><source type="image/avif" srcset="img/hitte_voll-640w.avif 640w, img/hitte_voll.avif 1600w" sizes="(max-width: 768px) 50vw, 320px"><img src="img/hitte_voll.jpg" alt="Volle Hütte" width="1869" height="1402" loading="lazy" decoding="async"></picture>
                     </a>
                 </div>
             </div>
 
-            <!-- Back to home button -->
-            <div class="text-center mt-5">
-                <a href="index.html" class="btn btn-primary btn-lg" id="backToHome">Zurück zur Startseite</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="mastfoot pb-5 bg-white section-padding pb-0">
-        <div class="inner container">
-             <div class="row">
-
-                <!-- desktop -->
-             	<div class="col-lg-4 only-desktop">
-             		<div class="footer-widget pr-lg-5 pr-0">
-    	         		<p>Prackenweg 32<br>I-39030 Olang<br><span id="footerLocation">Südtirol Italien</span></p>
-    			
-    					<p><span id="footerPhone">Telefon</span>: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
-    					<p><span id="footerMobile">Privat</span>: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
-    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
-    					
-    					<p><span id="footerVAT">Mwst. Nummer</span>: IT 01480450210</p>
-             		</div>
-             	</div>                 <!-- mobile -->
-                 <div class="middle col-sm-12 only-mobile">
-                    <div class="footer-widget middle">
-                        <p>Prackenweg 32<br>I-39030 Olang<br><span id="footerLocationMobile">Südtirol Italien</span></p>
-    			
-    					<p><span id="footerPhoneMobile">Telefon</span>: <a href="tel:+39 0474 430 621">+39 0474 430 621</a></p>
-    					<p><span id="footerMobileMobile">Privat</span>: <a href="tel:+39 331 184 8018">+39 331 184 8018</a></p>
-    					<p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
-    					
-    					<p><span id="footerVATMobile">Mwst. Nummer</span>: IT 01480450210</p>
-                    </div>
-                </div>                 <!-- desktop -->
-             	<div class="col-lg-5 only-desktop">
-             		<div class="footer-widget px-lg-5 px-0">
-             			<h4 id="footerHours">Öffnungszeiten</h4>
-                        <p><strong id="footerSeason">Saison von 28.11.2026 bis 29.03.2027</strong></p>
-    	         		<ul class="list-unstyled open-hours">
-    		                <li class="d-flex justify-content-between"><span id="dayMon">Montag</span><span>9:00 - 16:00 <span id="timeLabel">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayTue">Dienstag</span><span>9:00 - 16:00 <span id="timeLabel2">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayWed">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabel3">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayThu">Donnerstag</span><span>9:00 - 16:00 <span id="timeLabel4">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayFri">Freitag</span><span>9:00 - 16:00 <span id="timeLabel5">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="daySat">Samstag</span><span>9:00 - 16:00 <span id="timeLabel6">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="daySun">Sonntag</span><span> 9:00 - 16:00 <span id="timeLabel7">Uhr</span></span></li>
-    		              </ul>
-             		</div>
-             	</div>
-
-                  <!-- mobile -->
-             	<div class="col-sm-12 middle only-mobile padding-top">
-                    <div class="footer-widget middle">
-                        <h4 id="footerHoursMobile">Öffnungszeiten</h4>
-                       <p><strong id="footerSeasonMobile">Saison vom 28.11.2026 bis 29.03.2027</strong></p>
-                       <div class="container mx-auto w-75 middle">
-                        <ul class="list-unstyled open-hours">
-    		                <li class="d-flex justify-content-between"><span id="dayMonMobile">Montag</span><span>9:00 - 16:00 <span id="timeLabelMobile">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayTueMobile">Dienstag</span><span>9:00 - 16:00 <span id="timeLabelMobile2">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayWedMobile">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabelMobile3">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayThuMobile">Donnerstag</span><span>9:00 - 16:00 <span id="timeLabelMobile4">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="dayFriMobile">Freitag</span><span>9:00 - 16:00 <span id="timeLabelMobile5">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="daySatMobile">Samstag</span><span>9:00 - 16:00 <span id="timeLabelMobile6">Uhr</span></span></li>
-    		                <li class="d-flex justify-content-between"><span id="daySunMobile">Sonntag</span><span> 9:00 - 16:00 <span id="timeLabelMobile7">Uhr</span></span></li>
-    		              </ul>
-                        </div>     
+                    <!-- Back to home button -->
+                    <div class="text-center mt-5">
+                        <a href="index.html" class="btn btn-primary btn-lg" id="backToHome">Zurück zur Startseite</a>
                     </div>
                 </div>
+            </section>
+        </main>
 
-             	 <!-- desktop align end -->
-                  <div class="col-lg-3 end only-desktop">
-                    <div class="footer-widget end">
-                       <nav class="nav nav-mastfoot end justify-content-end">
-                           <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
-                               <i class="fab icon-size-2 fa-facebook-f"></i>
-                           </a>
-                           <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
-                               <i class="fab icon-size-2 fa-instagram"></i>
-                           </a>
-                       </nav>
-                       <div class="w-100 ">
-                           <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
-                       </div>
+        <!-- FOOTER -->
+        <footer class="mastfoot pb-5 bg-white section-padding pb-0">
+            <div class="inner container">
+                <div class="row">
+                    <div class="col-12 col-lg-4 text-center text-lg-left">
+                        <div class="footer-widget pr-lg-5 pr-0">
+                            <p>Prackenweg 32<br>I-39030 Olang<br><span id="footerLocation">Südtirol Italien</span></p>
+                            <p><span id="footerPhone">Telefon</span>: <a href="tel:+390474430621">+39 0474 430 621</a></p>
+                            <p><span id="footerMobile">Privat</span>: <a href="tel:+393311848018">+39 331 184 8018</a></p>
+                            <p>Mail: <a href="mailto:huibahitte@gmail.com">huibahitte@gmail.com</a></p>
+                            <p><span id="footerVAT">Mwst. Nummer</span>: IT 01480450210</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5 text-center text-lg-left pt-5 pt-lg-0">
+                        <div class="footer-widget px-lg-5 px-0">
+                            <h4 id="footerHours">Öffnungszeiten</h4>
+                            <p><strong id="footerSeason">Saison von 28.11.2026 bis 29.03.2027</strong></p>
+                            <div class="open-hours-wrap">
+                                <ul class="list-unstyled open-hours">
+                                    <li class="d-flex justify-content-between"><span id="dayMon">Montag</span><span>9:00 - 16:00 <span id="timeLabel">Uhr</span></span></li>
+                                    <li class="d-flex justify-content-between"><span id="dayTue">Dienstag</span><span>9:00 - 16:00 <span id="timeLabel2">Uhr</span></span></li>
+                                    <li class="d-flex justify-content-between"><span id="dayWed">Mittwoch</span><span>9:00 - 16:00 <span id="timeLabel3">Uhr</span></span></li>
+                                    <li class="d-flex justify-content-between"><span id="dayThu">Donnerstag</span><span>9:00 - 16:00 <span id="timeLabel4">Uhr</span></span></li>
+                                    <li class="d-flex justify-content-between"><span id="dayFri">Freitag</span><span>9:00 - 16:00 <span id="timeLabel5">Uhr</span></span></li>
+                                    <li class="d-flex justify-content-between"><span id="daySat">Samstag</span><span>9:00 - 16:00 <span id="timeLabel6">Uhr</span></span></li>
+                                    <li class="d-flex justify-content-between"><span id="daySun">Sonntag</span><span>9:00 - 16:00 <span id="timeLabel7">Uhr</span></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-3 text-center text-lg-right pt-5 pt-lg-0">
+                        <div class="footer-widget">
+                            <nav class="nav nav-mastfoot justify-content-center justify-content-lg-end" aria-label="Social Media">
+                                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://facebook.com/huibahitte" aria-label="Huiba Hitte auf Facebook">
+                                    <i class="fab icon-size-2 fa-facebook-f" aria-hidden="true"></i>
+                                </a>
+                                <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://instagram.com/huiba_hitte" aria-label="Huiba Hitte auf Instagram">
+                                    <i class="fab icon-size-2 fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </nav>
+                            <div class="w-100">
+                                <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" alt="" width="293" height="594" style="padding-top: 20px; width: 80px; height: 180px;" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-               <!-- mobile align center -->
-               <div class="col-lg-3 middle only-mobile padding-top">
-                   <div class="footer-widget middle">
-                      <nav class="nav nav-mastfoot end justify-content-center">
-                          <a class="nav-link" target="_blank" href="https://facebook.com/huibahitte">
-                              <i class="fab icon-size-2 fa-facebook-f"></i>
-                          </a>
-                          <a class="nav-link" target="_blank" href="https://instagram.com/huiba_hitte">
-                              <i class="fab icon-size-2 fa-instagram"></i>
-                          </a>
-                      </nav>
-                      <div class="w-100">
-                          <img src="img/huibahittelogonurH.png" class="img-fluid footer-logo mb-3" style="padding-top:20px; width: 80px;height: 180px;">
-                      </div>
-                   </div>
-               </div>
-             	
-                
+            <div>
+                <div class="col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 48px;">
+                    <a href="impressum.html" id="footerImprint">Impressum</a>
+                </div>
+
+                <div class="col-md-12 d-flex align-items-center" style="padding-top: 48px;">
+                    <p class="mx-auto text-center mb-0">Copyright 2027. All Right Reserved. Design by Huiba Family</p>
+                </div>
             </div>
-        </div>
-    	<section>
-            
-            <div class="col-md-12 d-flex align-items-center justify-content-center" style="padding-top: 48px;">
-                <a href="impressum.html" id="footerImprint">Impressum</a>
-            </div>
-            
-    
-    		<div class="col-md-12 d-flex align-items-center" style="padding-top:48px">
-             	<p class="mx-auto text-center mb-0">Copyright 2027. All Right Reserved. Design by Huiba Family</p>
-            </div>
-        
-    	</section>
-    	
-    </footer>	
+        </footer>
     </div>
 
-    </div>
-    	<!-- External JS -->
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    	<script src="vendor/bootstrap/popper.min.js"></script>
-    	<script src="vendor/bootstrap/bootstrap.min.js"></script>
-    	<script src="vendor/select2/select2.min.js "></script>
-    	<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
-    	<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js"></script>
-    	<script src="vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- External JS (deferred, only jQuery + Featherlight lightbox) -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.13/featherlight.min.js"></script>
 
-    	<!-- Main JS -->
-    	<script src="js/app.min.js "></script>
-    	
-    	<!-- Gallery Translation System -->
-    	<script>
+    <!-- Gallery Translation System -->
+    <script>
         const translations = {
             de: {
                 galleryTitle: 'Unsere Familienbetrieb Galerie',
@@ -469,7 +360,6 @@
                 homemadeDishesTitle: 'Hausgemachte Gerichte',
                 hutLifeTitle: 'Die Hütte',
                 backToHome: 'Zurück zur Startseite',
-                // Footer translations
                 footerLocation: 'Südtirol Italien',
                 footerPhone: 'Telefon',
                 footerMobile: 'Privat',
@@ -492,14 +382,13 @@
                 homemadeDishesTitle: 'Piatti Fatti in Casa',
                 hutLifeTitle: 'Il Rifugio',
                 backToHome: 'Torna alla homepage',
-                // Footer translations
                 footerLocation: 'Alto Adige Italia',
                 footerPhone: 'Telefono',
                 footerMobile: 'Privato',
                 footerVAT: 'IVA',
                 footerHours: 'Orari di apertura',
                 footerSeason: 'Stagione dal 28.11.2026 al 29.03.2027',
-                footerImprint: 'Impronta',
+                footerImprint: 'Note legali',
                 timeLabel: '',
                 dayMon: 'Lunedì', dayTue: 'Martedì', dayWed: 'Mercoledì', dayThu: 'Giovedì',
                 dayFri: 'Venerdì', daySat: 'Sabato', daySun: 'Domenica'
@@ -515,7 +404,6 @@
                 homemadeDishesTitle: 'Homemade Dishes',
                 hutLifeTitle: 'The Hut',
                 backToHome: 'Back to homepage',
-                // Footer translations
                 footerLocation: 'South Tyrol Italy',
                 footerPhone: 'Phone',
                 footerMobile: 'Mobile',
@@ -530,10 +418,11 @@
         };
 
         function setLanguage(lang) {
+            if (!translations[lang]) lang = 'de';
             localStorage.setItem('galleryLanguage', lang);
+            localStorage.setItem('indexLanguage', lang);
             updateContent(lang);
-            
-            // Update meta description
+
             const metaDesc = document.querySelector('meta[name="description"]');
             if (lang === 'it') {
                 metaDesc.content = 'Galleria dei nostri prodotti fatti in casa e piatti regionali. Huiba Hitte, rifugio sciistico al Plan de Corones.';
@@ -545,117 +434,51 @@
                 metaDesc.content = 'Galerie unserer hausgemachten Produkte und Gerichte. Huiba Hitte, Skihütte am Kronplatz.';
                 document.title = 'Galerie - Huiba Hitte';
             }
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
         }
 
         function updateContent(lang) {
-            const t = translations[lang];
-            
-            // Update all translatable elements
+            const t = translations[lang] || translations.de;
+
             Object.keys(t).forEach(key => {
                 const el = document.getElementById(key);
-                if (el) {
-                    el.textContent = t[key];
-                }
-                // Also update mobile versions
-                const elMobile = document.getElementById(key + 'Mobile');
-                if (elMobile) {
-                    elMobile.textContent = t[key];
-                }
+                if (el) el.textContent = t[key];
             });
-            
-            // Update time labels
+
             for (let i = 1; i <= 7; i++) {
                 const label = document.getElementById('timeLabel' + (i > 1 ? i : ''));
                 if (label) label.textContent = t.timeLabel;
-                const labelM = document.getElementById('timeLabelMobile' + (i > 1 ? i : ''));
-                if (labelM) labelM.textContent = t.timeLabel;
             }
-            
-            // Update impressum link
+
             const imprintEl = document.getElementById('footerImprint');
             if (imprintEl) {
                 imprintEl.textContent = t.footerImprint;
                 imprintEl.href = lang === 'de' ? 'impressum.html' : 'impressum_' + lang + '.html';
             }
+
+            document.querySelectorAll('[data-lang]').forEach(btn => {
+                btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+            });
+
+            document.documentElement.lang = lang;
         }
 
-        // Auto-detect language on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            let lang = localStorage.getItem('galleryLanguage');
-            
-            if (!lang) {
-                // Try to get from main site language
-                lang = localStorage.getItem('indexLanguage');
-                if (!lang) {
-                    // Detect browser language
-                    const browserLang = navigator.language || navigator.userLanguage;
-                    if (browserLang.startsWith('de')) lang = 'de';
-                    else if (browserLang.startsWith('it')) lang = 'it';
-                    else lang = 'en';
-                }
-            }
-            
-            updateContent(lang);
-            
-            // Optimize image loading with progressive enhancement
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            
-            // Add compression and quality hints
-            document.querySelectorAll('img').forEach(img => {
-                // Add decoding hint for better performance
-                img.decoding = 'async';
-                
-                // Add loading hint for above-the-fold images
-                const rect = img.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    img.loading = 'eager';
-                }
-            });
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            
-                            // Progressive loading with quality improvement
-                            img.onload = () => {
-                                img.classList.add('loaded');
-                                // Prefetch next images for smoother experience
-                                const nextImg = img.closest('.gallery-item')?.nextElementSibling?.querySelector('img');
-                                if (nextImg && !nextImg.classList.contains('loaded')) {
-                                    nextImg.loading = 'eager';
-                                }
-                            };
-                            
-                            if (img.complete) {
-                                img.classList.add('loaded');
-                            }
-                            observer.unobserve(img);
-                        }
-                    });
-                }, {
-                    rootMargin: '50px 0px',
-                    threshold: 0.1
+        window.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-lang]').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    setLanguage(this.dataset.lang);
                 });
-                
-                lazyImages.forEach(img => imageObserver.observe(img));
-            } else {
-                // Fallback for older browsers with delayed loading
-                let loadIndex = 0;
-                const loadNext = () => {
-                    if (loadIndex < lazyImages.length) {
-                        lazyImages[loadIndex].classList.add('loaded');
-                        loadIndex++;
-                        setTimeout(loadNext, 100); // Stagger loading
-                    }
-                };
-                loadNext();
+            });
+
+            let lang = localStorage.getItem('galleryLanguage') || localStorage.getItem('indexLanguage');
+            if (!lang) {
+                const browserLang = (navigator.language || navigator.userLanguage || 'de').toLowerCase();
+                if (browserLang.startsWith('de')) lang = 'de';
+                else if (browserLang.startsWith('it')) lang = 'it';
+                else lang = 'en';
             }
+            updateContent(lang);
         });
     </script>
-    </body>
-    </html>
+</body>
+
+</html>

@@ -159,6 +159,23 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center; }
 
+.welcome-bg-family {
+  background-image: url("../img/family.jpg");
+  background-image: image-set(
+    url("../img/family.avif") type("image/avif") 1x,
+    url("../img/family.jpg") type("image/jpeg") 1x
+  ); }
+
+.welcome-bg-sunrise {
+  background-image: url("../img/hitte_sunrise.jpg");
+  background-image: image-set(
+    url("../img/hitte_sunrise.avif") type("image/avif") 1x,
+    url("../img/hitte_sunrise.jpg") type("image/jpeg") 1x
+  ); }
+
+picture {
+  display: block; }
+
 .img-cover {
   object-fit: cover;
   object-position: center; }
@@ -178,6 +195,9 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--color-heading);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   transition: color 0.2s ease, opacity 0.2s ease; }
 
 .nav-link:hover {
@@ -349,90 +369,21 @@ a:hover {
   }
   @media (max-width: 992px) {
     #pistenplan {
-      margin-bottom: 10px;
+      height: auto;
+      margin-bottom: 0;
+    }
+  }
+
+.open-hours-wrap {
+  width: 100%; }
+  @media (max-width: 991.98px) {
+    .open-hours-wrap {
+      width: 75%;
+      margin-inline: auto;
     }
   }
 
 /*=====  End of pistenplan  ======*/
-/*===============================
-=            SideNav            =
-===============================*/
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1002;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  color: #fff; }
-
-.sidenav-content {
-  padding: 8px 32px;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-
-.in .sidenav-content {
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, opacity 0.5s 0.5s; }
-
-.sidenav a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s; }
-
-.sidenav a:hover {
-  color: #f1f1f1; }
-
-.sidenav #side-nav-close,
-.sidenav #side-search-close {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px; }
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px; }
-  .sidenav a {
-    font-size: 18px; } }
-
-#side-search .form-control {
-  background-color: transparent; }
-
-#side-search .input-group-text {
-  background: transparent;
-  color: #fff; }
-
-#canvas-overlay {
-  content: '';
-  background: #000;
-  opacity: 0;
-  display: block;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1001;
-  visibility: hidden;
-  transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-
-.sidenav-open #canvas-overlay,
-.sidesearch-open #canvas-overlay {
-  max-width: 100%;
-  opacity: .4;
-  visibility: visible; }
-
-/*=====  End of SideNav  ======*/
 /*======================================
 =            Story                     =
 ======================================*/
