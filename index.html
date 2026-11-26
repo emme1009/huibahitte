@@ -98,7 +98,7 @@
 
 <body class="static-layout">
     <div class="boxed-page">
-        <header class="site-header" id="navbar-header">
+        <header class="site-header site-header--reveal" id="navbar-header">
             <div class="container header-inner">
                 <a class="nav-brand-link" href="index.html" aria-label="Huiba Hitte Startseite">
                     <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte" class="nav-brand-logo" width="289" height="236">
@@ -106,7 +106,7 @@
 
                 <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
                     <ul class="site-nav-list">
-                        <li><a class="nav-link" href="#welcome" id="navWelcome">Startseite</a></li>
+                        <li><a class="nav-link" href="#welcome" id="navWelcome">Team</a></li>
                         <li><a class="nav-link" href="#kitchen" id="navKitchen">Küche</a></li>
                         <li><a class="nav-link" href="#story" id="navStory">Geschichte</a></li>
                         <li><a class="nav-link" href="gallery.html" id="navGallery">Galerie</a></li>
@@ -134,6 +134,7 @@
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="col-lg-6 hero-left">
+                            <img src="img/huibahittelogo_dark.png" alt="Huiba Hitte" class="hero-brand-logo" width="289" height="236">
                             <span class="hero-eyebrow" id="heroEyebrow">Skihütte am Kronplatz · 1.800 m</span>
                             <h1 class="hero-title">
                                 <span id="heroWelcome">Hoila</span>
@@ -529,7 +530,7 @@
                 galleryCtaWelcome: 'Unsere Galerie entdecken',
                 galleryCtaMain: 'Komplette Galerie ansehen',
                 galleryCtaStory: 'Mehr über unsere Geschichte',
-                navWelcome: 'Startseite',
+                navWelcome: 'Team',
                 navKitchen: 'Küche',
                 navStory: 'Geschichte',
                 navGallery: 'Galerie',
@@ -595,7 +596,7 @@
                 story2Title2: 'estate',
                 story1Text: 'La "Huiba Hitte" si trova a 1800 m, sul lato di Valdaora del Plan de Corones, e comprende sei ettari di prato. Da 70 anni è di proprietà della famiglia Pörnbacher - Huber di Valdaora. Nei primi 50 anni, quello che allora si chiamava "Ruipa Albl" è stato affittato e ricostruito nel 1998 con il nome di "Huber Alm".',
                 story2Text: 'Alcune delle nostre mucche e giovenche pascolano sulle piste da sci nei mesi estivi. In inverno l\'alpeggio era affittato e utilizzato come rifugio sciistico. Nel 2022 abbiamo rilevato il rifugio come famiglia e lo gestiamo con il nome della nostra fattoria "Huiba".',
-                navWelcome: 'Home',
+                navWelcome: 'Team',
                 navKitchen: 'Cucina',
                 navStory: 'Storia',
                 navGallery: 'Galleria',
@@ -661,7 +662,7 @@
                 galleryCtaWelcome: 'Discover our gallery',
                 galleryCtaMain: 'View complete gallery',
                 galleryCtaStory: 'More of our history',
-                navWelcome: 'Home',
+                navWelcome: 'Team',
                 navKitchen: 'Kitchen',
                 navStory: 'History',
                 navGallery: 'Gallery',
@@ -744,6 +745,21 @@
 
             const header = document.getElementById('navbar-header');
             const menuToggle = document.getElementById('menuToggle');
+            if (header) {
+                const heroLogo = document.querySelector('.hero-brand-logo');
+                const syncScrollHeader = () => {
+                    const headerH = header.getBoundingClientRect().height;
+                    const logoOutOfView = heroLogo ? heroLogo.getBoundingClientRect().bottom <= headerH : true;
+                    header.classList.toggle('is-scrolled', window.scrollY > 36 && logoOutOfView);
+                };
+                window.addEventListener('scroll', syncScrollHeader, { passive: true });
+                window.addEventListener('resize', syncScrollHeader, { passive: true });
+                if (heroLogo && 'IntersectionObserver' in window) {
+                    const io = new IntersectionObserver(syncScrollHeader, { threshold: [0, 0.25, 1] });
+                    io.observe(heroLogo);
+                }
+                syncScrollHeader();
+            }
             if (header && menuToggle) {
                 const closeMenu = () => {
                     header.classList.remove('is-menu-open');

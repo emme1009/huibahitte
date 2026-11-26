@@ -28,6 +28,7 @@
 html {
   overflow-x: clip;
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
@@ -163,6 +164,7 @@ a:hover {
 .boxed-page {
   position: relative;
   background-color: var(--color-surface);
+  overflow-anchor: none;
 }
 
 .boxed-page .section-padding {
@@ -220,8 +222,7 @@ picture {
 }
 
 /* Sticky Glass Header & Navigation */
-.site-header,
-#navbar-header {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -231,6 +232,24 @@ picture {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-block-end: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.site-header--reveal:not(.is-scrolled):not(.is-menu-open) {
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-block-end-color: transparent;
+  box-shadow: none;
+}
+
+.site-header--reveal.is-scrolled,
+.site-header--reveal.is-menu-open {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-block-end-color: var(--color-border);
+  box-shadow: 0 10px 30px -14px rgba(38, 32, 27, 0.14);
 }
 
 .header-inner {
@@ -247,8 +266,27 @@ picture {
   flex-shrink: 0;
 }
 
+.site-header--reveal .nav-brand-link {
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+}
+
+.site-header--reveal:not(.is-scrolled):not(.is-menu-open) .nav-brand-link {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
+
+.site-header--reveal.is-scrolled .nav-brand-link,
+.site-header--reveal.is-menu-open .nav-brand-link {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .nav-brand-logo {
-  block-size: 40px;
+  block-size: 56px;
   inline-size: auto;
   display: block;
 }
@@ -373,14 +411,13 @@ picture {
 }
 
 @media (max-width: 991.98px) {
-  .site-header,
-  #navbar-header {
+  .site-header {
     min-block-size: 3.5rem;
     padding-block: 0.45rem;
   }
 
   .nav-brand-logo {
-    block-size: 34px;
+    block-size: 44px;
   }
 
   .lang-btn {
@@ -489,12 +526,29 @@ picture {
   background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 100%);
 }
 
+.site-header--reveal + main > .hero {
+  margin-block-start: -5rem;
+  padding-block-start: calc(clamp(2.5rem, 5vw, 4.5rem) + 5rem);
+}
+
 @media (min-width: 992px) {
   .hero {
     min-block-size: min(82dvh, 760px);
     display: flex;
     align-items: safe center;
   }
+}
+
+.hero-brand-logo {
+  block-size: clamp(110px, 13vw, 138px);
+  inline-size: auto;
+  display: block;
+  margin-block-end: 1.25rem;
+}
+
+.gallery-hero-logo {
+  margin-inline: auto;
+  margin-block-end: 1.25rem;
 }
 
 .hero-eyebrow {
